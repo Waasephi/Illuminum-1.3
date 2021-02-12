@@ -12,7 +12,7 @@ namespace Illuminum.Items.Armors.Quartz
 		{
 			base.SetStaticDefaults();
 			DisplayName.SetDefault("Quartz Leggings");
-			Tooltip.SetDefault("+2% Movement Speed");
+			Tooltip.SetDefault("+4% Movement Speed");
 		}
 
 		public override void SetDefaults()
@@ -21,12 +21,12 @@ namespace Illuminum.Items.Armors.Quartz
 			item.height = 18;
 			item.value = 1000;
 			item.rare = ItemRarityID.White;
-			item.defense = 2;
+			item.defense = 3;
 		}
 
 		public override void UpdateEquip(Player player)
 		{
-			player.moveSpeed *= 1.02f;
+			player.moveSpeed *= 1.04f;
 			//player.statManaMax2 += 20;
 			//player.maxMinions+=2;
 			//player.AddBuff(BuffID.Shine, 2);

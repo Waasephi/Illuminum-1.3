@@ -36,7 +36,7 @@ namespace Illuminum.Items.Armors.Ebondune
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DemoniteBar, 20);
+			recipe.AddIngredient(mod, "VialofEvil", 10);
 			recipe.AddIngredient(3271, 150); //Sandstone Block
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);

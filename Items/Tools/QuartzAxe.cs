@@ -20,8 +20,8 @@ namespace Illuminum.Items.Tools
 			item.melee = true;
 			item.width = 44;
 			item.height = 40;
-			item.useTime = 30;
-			item.useAnimation = 30;
+			item.useTime = 20;
+			item.useAnimation = 20;
 			item.axe = 11;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;

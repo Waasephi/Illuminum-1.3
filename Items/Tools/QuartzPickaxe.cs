@@ -16,15 +16,15 @@ namespace Illuminum.Items.Tools
 
 		public override void SetDefaults()
 		{
-			item.damage = 9;
+			item.damage = 7;
 			item.melee = true;
 			item.width = 40;
 			item.height = 40;
-			item.useTime = 18;
-			item.useAnimation = 18;
+			item.useTime = 13;
+			item.useAnimation = 13;
 			item.pick = 65;
 			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 6;
+			item.knockBack = 5;
 			item.value = 1000;
 			item.rare = ItemRarityID.White;
 			item.UseSound = SoundID.Item1;

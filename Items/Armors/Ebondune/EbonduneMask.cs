@@ -12,7 +12,7 @@ namespace Illuminum.Items.Armors.Ebondune
 		{
 			base.SetStaticDefaults();
 			DisplayName.SetDefault("Ebondune Mask");
-			Tooltip.SetDefault("+6% Melee Damage");
+			Tooltip.SetDefault("+7% Melee Damage");
 		}
 
 		public override void SetDefaults()
@@ -21,12 +21,12 @@ namespace Illuminum.Items.Armors.Ebondune
 			item.height = 20;
 			item.value = 1000;
 			item.rare = ItemRarityID.Blue;
-			item.defense = 6;
+			item.defense = 4;
 		}
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage *= 1.06f;
+			player.meleeDamage *= 1.07f;
 			//player.endurance *= 1.05f;
 			//player.statManaMax2 += 20;
 			//player.maxMinions += 1;
@@ -40,15 +40,14 @@ namespace Illuminum.Items.Armors.Ebondune
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "+7% Increased Melee Damage, Permanent Rage Affect";
-			player.meleeDamage *= 1.07f;
-			player.AddBuff(BuffID.Rage, 2);
+			player.setBonus = "+8% Melee Crit";
+			player.meleeCrit += 8;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DemoniteBar, 10);
+			recipe.AddIngredient(mod, "VialofEvil", 5);
 			recipe.AddIngredient(3271, 50); //Sandstone Block
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);

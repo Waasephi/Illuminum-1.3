@@ -41,7 +41,7 @@ namespace Illuminum.Items.Armors.Crimrise
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "+8% Increased Magic Damage, 5% Reduced Mana Usage, Increased Life Regeneration.";
+			player.setBonus = "+8% Increased Magic Damage, 5% Reduced Mana Usage, Increased Life Regeneration by 1.";
 			player.magicDamage *= 1.08f;
 			player.manaCost *= 0.95f;
 			player.lifeRegen += 1;
@@ -50,7 +50,7 @@ namespace Illuminum.Items.Armors.Crimrise
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CrimtaneBar, 10);
+			recipe.AddIngredient(mod, "VialofEvil", 5);
 			recipe.AddIngredient(3271, 50); //Sandstone Block
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);

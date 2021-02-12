@@ -12,7 +12,7 @@ namespace Illuminum.Items.Armors.Quartz
 		{
 			base.SetStaticDefaults();
 			DisplayName.SetDefault("Quartz Chestplate");
-			Tooltip.SetDefault("+1% Damage");
+			Tooltip.SetDefault("+2% Damage");
 		}
 
 		public override void SetDefaults()
@@ -21,12 +21,12 @@ namespace Illuminum.Items.Armors.Quartz
 			item.height = 22;
 			item.value = 1500;
 			item.rare = ItemRarityID.White;
-			item.defense = 3;
+			item.defense = 4;
 		}
 
 		public override void UpdateEquip(Player player)
 		{
-			player.allDamage *= 1.01f;
+			player.allDamage *= 1.02f;
 			//player.statManaMax2 += 20;
 			//player.maxMinions++;
 			//player.AddBuff(BuffID.Shine, 2);

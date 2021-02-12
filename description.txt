@@ -2,12 +2,14 @@ Hello and welcome to the Illuminum Mod!
 
 This is a very work in progress content mod that just adds some simple content. Nothing too fancy!
 
-Currently there are 39 Items total in this mod, Including:
-3 Armor Sets
-1 Accessory
-2 Materials
+Currently there are 52 Items total in this mod, Including:
+5 Armor Sets
+2 Accessories
+5 Materials
 3 Tools
-24 Weapons - 19 Melee - 3 Ranged - 2 Magic
+1 Crafting Station
+1 Enemy
+31 Weapons - 22 Melee - 5 Ranged - 4 Magic
 
 Currently the mod is very small but I will be trying to update it as much as I can to add some interesting content for your everyday modded runs!
 
@@ -15,9 +17,22 @@ At the moment this mod is not planned to be for standalone mod playthroughs, but
 
 Mod Team
 
-Waasephi - Mod Creator, Coder, Spriter
+Waasephi - Mod Creator, Coder, Spriter, Wiki Editor, Tester
+CrusaderAether - Wiki Editor
+Nimta - Tester
+Megaswave - Tester
+Brodtyv - Composer
 
 I am looking for coders and spriters to help me with this project! If you are interested please let me know in my discord
 
 Thank you for stopping by, I greatly appreciate it and hope you enjoy the content provided!
+
+Changelog
+
+- Added The Cursed Forge
+- Added Dark Steel Plating
+- Added Hematite Chunks
+- Added Dark Steel Weapons and Armor
+- Added Hematite Weapons and Armor
+- Added Band of Nature
 

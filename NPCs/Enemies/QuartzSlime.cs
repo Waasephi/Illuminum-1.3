@@ -1,3 +1,4 @@
+using Illuminum.Items.Banners;
 using Illuminum.Items.Materials;
 using Terraria;
 using Terraria.ID;
@@ -28,25 +29,18 @@ namespace Illuminum.NPCs.Enemies
 			npc.aiStyle = 1;
 			aiType = NPCID.BlueSlime;
 			animationType = NPCID.BlueSlime;
+			banner = npc.type;
+			bannerItem = ModContent.ItemType<QuartzSlimeBanner>();
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			return spawnInfo.player.ZoneRockLayerHeight ? 0.1f : 0f;
+			return spawnInfo.player.ZoneRockLayerHeight ? 0.3f : 0f;
 		}
 
 		public override void NPCLoot()
 		{
-			int loots = Main.rand.Next(2);
-			switch (loots)
-			{
-				case 1:
-					Item.NewItem(npc.getRect(), ModContent.ItemType<QuartzChunk>(), Main.rand.Next(2, 3));
-					break;
-				case 2:
-					Item.NewItem(npc.getRect(), ModContent.ItemType<QuartzChunk>(), Main.rand.Next(4, 6));
-					break;
-			}
+					Item.NewItem(npc.getRect(), ModContent.ItemType<QuartzChunk>(), Main.rand.Next(1, 5));
 		}
 	}
 }

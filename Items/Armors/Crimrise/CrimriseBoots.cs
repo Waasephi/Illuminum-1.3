@@ -12,7 +12,7 @@ namespace Illuminum.Items.Armors.Crimrise
 		{
 			base.SetStaticDefaults();
 			DisplayName.SetDefault("Crimrise Boots");
-			Tooltip.SetDefault("+4% Movement Speed");
+			Tooltip.SetDefault("+10% Movement Speed");
 		}
 
 		public override void SetDefaults()
@@ -21,12 +21,12 @@ namespace Illuminum.Items.Armors.Crimrise
 			item.height = 16;
 			item.value = Item.sellPrice(silver: 15);
 			item.rare = ItemRarityID.Blue;
-			item.defense = 4;
+			item.defense = 2;
 		}
 
 		public override void UpdateEquip(Player player)
 		{
-			player.moveSpeed *= 1.04f;
+			player.moveSpeed *= 1.1f;
 			//player.statManaMax2 += 20;
 			//player.maxMinions+=2;
 			//player.AddBuff(BuffID.Shine, 2);
@@ -35,7 +35,7 @@ namespace Illuminum.Items.Armors.Crimrise
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CrimtaneBar, 15);
+			recipe.AddIngredient(mod, "VialofEvil", 8);
 			recipe.AddIngredient(3271, 100); //Sandstone Block
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);

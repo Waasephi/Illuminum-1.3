@@ -12,7 +12,7 @@ namespace Illuminum.Items.Armors.Crimrise
 		{
 			base.SetStaticDefaults();
 			DisplayName.SetDefault("Crimrise Chestpiece");
-			Tooltip.SetDefault("+2% Damage, Immunity to Bleeding");
+			Tooltip.SetDefault("+3% Damage, Immunity to Feral Bite");
 		}
 
 		public override void SetDefaults()
@@ -21,13 +21,13 @@ namespace Illuminum.Items.Armors.Crimrise
 			item.height = 24;
 			item.value = Item.sellPrice(silver: 20);
 			item.rare = ItemRarityID.Blue;
-			item.defense = 6;
+			item.defense = 5;
 		}
 
 		public override void UpdateEquip(Player player)
 		{
-			player.allDamage *= 1.02f;
-			player.buffImmune[BuffID.Bleeding] = true;
+			player.allDamage *= 1.03f;
+			player.buffImmune[BuffID.Rabies] = true;
 			//player.statManaMax2 += 20;
 			//player.maxMinions++;
 			//player.AddBuff(BuffID.Shine, 2);
@@ -36,7 +36,7 @@ namespace Illuminum.Items.Armors.Crimrise
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CrimtaneBar, 20);
+			recipe.AddIngredient(mod, "VialofEvil", 10);
 			recipe.AddIngredient(3271, 150); //Sandstone Block
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);

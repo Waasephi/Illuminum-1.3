@@ -12,7 +12,7 @@ namespace Illuminum.Items.Armors.Ebondune
 		{
 			base.SetStaticDefaults();
 			DisplayName.SetDefault("Ebondune Boots");
-			Tooltip.SetDefault("+5% Movement Speed");
+			Tooltip.SetDefault("+10% Movement Speed");
 		}
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Illuminum.Items.Armors.Ebondune
 
 		public override void UpdateEquip(Player player)
 		{
-			player.moveSpeed *= 1.05f;
+			player.moveSpeed *= 1.1f;
 			//player.statManaMax2 += 20;
 			//player.maxMinions+=2;
 			//player.AddBuff(BuffID.Shine, 2);
@@ -35,7 +35,7 @@ namespace Illuminum.Items.Armors.Ebondune
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DemoniteBar, 15);
+			recipe.AddIngredient(mod, "VialofEvil", 8);
 			recipe.AddIngredient(3271, 100); //Sandstone Block
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);

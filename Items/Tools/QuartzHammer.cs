@@ -20,11 +20,11 @@ namespace Illuminum.Items.Tools
 			item.melee = true;
 			item.width = 40;
 			item.height = 40;
-			item.useTime = 35;
-			item.useAnimation = 35;
+			item.useTime = 24;
+			item.useAnimation = 24;
 			item.hammer = 52;
 			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 6;
+			item.knockBack = 10;
 			item.value = 1000;
 			item.rare = ItemRarityID.White;
 			item.UseSound = SoundID.Item1;

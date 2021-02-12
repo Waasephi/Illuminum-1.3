@@ -12,7 +12,7 @@ namespace Illuminum.Items.Armors.Quartz
 		{
 			base.SetStaticDefaults();
 			DisplayName.SetDefault("Quartz Helmet");
-			Tooltip.SetDefault("+3% Ranged Damage");
+			Tooltip.SetDefault("+6% Ranged Damage");
 		}
 
 		public override void SetDefaults()
@@ -21,12 +21,12 @@ namespace Illuminum.Items.Armors.Quartz
 			item.height = 18;
 			item.value = 750;
 			item.rare = ItemRarityID.White;
-			item.defense = 2;
+			item.defense = 3;
 		}
 
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedDamage *= 1.03f;
+			player.rangedDamage *= 1.06f;
 			//player.endurance *= 1.05f;
 			//player.statManaMax2 += 20;
 			//player.maxMinions += 1;
@@ -40,8 +40,8 @@ namespace Illuminum.Items.Armors.Quartz
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "+4% Increased Ranged Damage";
-			player.rangedDamage *= 1.04f;
+			player.setBonus = "+6% Increased Ranged Damage";
+			player.rangedDamage *= 1.06f;
 		}
 
 		public override void AddRecipes()

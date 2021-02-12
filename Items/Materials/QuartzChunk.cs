@@ -18,13 +18,11 @@ namespace Illuminum.Items.Materials
 			item.height = 18;
 			item.value = 100;
 			item.rare = 0;
-			item.autoReuse = true;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.useTurn = true;
 			item.useAnimation = 15;
 			item.useTime = 10;
 			item.maxStack = 999;
-			item.consumable = true;
 		}
 	}
 }

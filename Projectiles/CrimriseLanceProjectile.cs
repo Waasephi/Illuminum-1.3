@@ -18,7 +18,7 @@ namespace Illuminum.Projectiles
 			projectile.height = 20;
 			projectile.aiStyle = 19;
 			projectile.penetrate = -1;
-			projectile.scale = 1.3f;
+			projectile.scale = 1.7f;
 			projectile.alpha = 0;
 
 			projectile.hide = true;
