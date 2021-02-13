@@ -7,6 +7,7 @@ namespace Illuminum
 {
 	public class Illuminum : Mod
 	{
+		// Ariam was here!
 		public override void AddRecipeGroups()
 		{
 			RecipeGroup EvilBar = new RecipeGroup(() => Lang.misc[37] + " Evil Bar", new int[]
