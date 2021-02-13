@@ -10,20 +10,7 @@ namespace Illuminum
 		// Ariam was here!
 		public override void AddRecipeGroups()
 		{
-			RecipeGroup EvilBar = new RecipeGroup(() => Lang.misc[37] + " Evil Bar", new int[]
-			{
-				ItemID.DemoniteBar,
-				ItemID.CrimtaneBar
-			});
-			RecipeGroup.RegisterGroup("Illuminum:EvilBar", EvilBar);
-
-			RecipeGroup EvilMaterial = new RecipeGroup(() => Lang.misc[37] + " Evil Material", new int[]
-			{
-				ItemID.ShadowScale,
-				ItemID.TissueSample
-			});
-			RecipeGroup.RegisterGroup("Illuminum:EvilMaterial", EvilMaterial);
-
+			Core.ModLoadables.RecipeGroups.Load();
 		}
 	}
 }

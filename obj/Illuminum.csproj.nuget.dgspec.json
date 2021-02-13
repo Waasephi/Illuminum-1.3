@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dreit\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\IlluminumMod\\Illuminum.csproj": {}
+    "C:\\Users\\dreit\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dreit\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\IlluminumMod\\Illuminum.csproj": {
+    "C:\\Users\\dreit\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dreit\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\IlluminumMod\\Illuminum.csproj",
+        "projectUniqueName": "C:\\Users\\dreit\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj",
         "projectName": "Illuminum",
-        "projectPath": "C:\\Users\\dreit\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\IlluminumMod\\Illuminum.csproj",
+        "projectPath": "C:\\Users\\dreit\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj",
         "packagesPath": "C:\\Users\\dreit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dreit\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\IlluminumMod\\obj\\",
+        "outputPath": "C:\\Users\\dreit\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dreit\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -38,7 +38,7 @@ namespace Illuminum.Items.Consumables
 
 		public override bool CanUseItem(Player player)
 		{
-			return player.ZoneSnow;
+			return true; // player.ZoneSnow;
 		}
 
 		public override bool UseItem(Player player)
