@@ -43,3 +43,4 @@ obj/Illuminum.csproj.nuget.dgspec.json
 obj/project.assets.json
 obj/project.nuget.cache
 IlluminumMod.csproj
+obj/Debug/net45/Illuminum.csprojAssemblyReference.cache

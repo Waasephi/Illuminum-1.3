@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using System;
 
 namespace Illuminum.NPCs.Bosses.FrigidWarlock {
+    [AutoloadBossHead]
     public class FrigidWarlock : BaseNPC {
 
         private ref float AIIncrementer => ref npc.ai[0];

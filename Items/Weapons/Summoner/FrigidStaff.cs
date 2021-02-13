@@ -1,4 +1,4 @@
-using Illuminum.Projectiles.Minions;
+//using Illuminum.Projectiles.Minions;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -32,8 +32,8 @@ namespace Illuminum.Items.Weapons.Summoner
             item.value = Item.buyPrice(0, 1, 0, 0);
             item.rare = 9;
             item.UseSound = SoundID.Item44;
-            item.shoot = ProjectileType<FrigidWarlite>();
-            item.buffType = BuffType<Buffs.FrigidWarlite>(); //The buff added to player after used the item
+            //item.shoot = ProjectileType<FrigidWarlite>();
+            //item.buffType = BuffType<Buffs.FrigidWarlite>(); //The buff added to player after used the item
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
