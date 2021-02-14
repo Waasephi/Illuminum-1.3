@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
 using System;
+using System.IO;
 
 namespace Illuminum.NPCs.Bosses.FrigidWarlock {
     [AutoloadBossHead]
@@ -11,6 +12,7 @@ namespace Illuminum.NPCs.Bosses.FrigidWarlock {
         private ref float AIIncrementer => ref npc.ai[0];
         private ref float State => ref npc.ai[1];
         public ref float AttackTimer => ref npc.ai[2];
+        private Vector2 savedPos;
         private const int MAXSTATES = 3;
 
         #region Basic Overridable Stuff
@@ -43,12 +45,17 @@ namespace Illuminum.NPCs.Bosses.FrigidWarlock {
         private void ChangeState() {
             AIIncrementer++;
             AttackTimer++;
-
             if (AIIncrementer >= 10.ToSeconds()) {
-                State = State == MAXSTATES ? 0 : State++;
+                State++;
+                if (State > MAXSTATES)
+                    State = 0;
                 Main.NewText("State: " + State);
             }
             else return;
+            if (State == 2) {
+                savedPos = target.position + new Vector2(0, -32);
+                Main.PlaySound(SoundID.DD2_DrakinBreathIn, npc.position);
+            }
             AttackTimer = 0;
             AIIncrementer = 0;
         }
@@ -58,24 +65,34 @@ namespace Illuminum.NPCs.Bosses.FrigidWarlock {
                     MovementStyleOne();
                     AttackStyleOne();
                     break;
+                case 1:
+                    MovementStyleOne();
+                    AttackStyleTwo();
+                    break;
+                case 2:
+                    MovementStyleTwo();
+                    AttackStyleThree();
+                    break;
                 default:
                     State = 0;
-                    goto case 0;
+                    break;
             }
         }
         #endregion
         public Player target => Main.player[npc.target];
         #region MovementStyles
         private void MovementStyleOne() {
-            BasicMover(target.Center + new Vector2(0, -200), 8f, 15);
+            BasicMover(target.Center + new Vector2(0, -200), 16f, 15);
+        }
+        private void MovementStyleTwo() {
+            BasicMover(savedPos, 3f, 0f);
         }
         #endregion
 
         #region AttackStyles
         private void AttackStyleOne() {
-            if (AttackTimer < 2.ToSeconds())
+            if (AttackTimer < 3.ToSeconds())
                 return;
-            Vector2 shootVel = Vector2.Normalize(new Vector2(target.Center.X - npc.Center.X, target.Center.Y - npc.Center.Y)) * 10f;
             float desiredVel = 5;
             var possiblePositions = new Vector2[] { // could use math.sign and some if statements but whatever
                 new Vector2(-desiredVel, 0),
@@ -84,19 +101,64 @@ namespace Illuminum.NPCs.Bosses.FrigidWarlock {
 
             for (int i = 0; i < 2; i++) {
                 WarlockProj p = (WarlockProj)Projectile.NewProjectileDirect(npc.Center, possiblePositions[i], ModContent.ProjectileType<WarlockProj>(), 10, 10).modProjectile;
-                p.timeUntilTurning = (0.5f).ToSeconds();
                 p.target = target;
-                p.speed = 8f;
+                p.speed = 5f;
+                p.timeUntilTurning = 1.ToSeconds();
+                p.maxTimesTurned = 3;
+            }
+            AttackTimer = 0;
+        }
+        private void AttackStyleTwo() {
+            if (AttackTimer < 3.ToSeconds())
+                return;
+            float desiredVel = 5;
+            var possiblePositions = new Vector2[] { // could use math.sign and some if statements but whatever
+                new Vector2(-desiredVel, 0),
+                new Vector2(desiredVel, 0)
+            };
+
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 3; j++) {
+                    Vector2 rotatedVect = possiblePositions[i].RotatedByRandom(Math.PI / 2);
+                    Projectile.NewProjectileDirect(npc.Center, rotatedVect, ModContent.ProjectileType<WarlockProj>(), 10, 10);
+                }
+            }
+            AttackTimer = 0;
+        }
+        private void AttackStyleThree() {
+            if (AttackTimer < 1.ToSeconds())
+                return;
+            float desiredVel = 5;
+            var possiblePositions = new Vector2[] { // could use math.sign and some if statements but whatever
+                new Vector2(-desiredVel, 0),
+                new Vector2(desiredVel, 0)
+            };
+
+            for (int i = 0; i < 2; i++) {
+                Projectile.NewProjectileDirect(npc.Center, possiblePositions[i], ModContent.ProjectileType<WarlockProj>(), 10, 10);
             }
             AttackTimer = 0;
         }
         #endregion
+
+        #region Sharing Fields
+        public override void SendExtraAI(BinaryWriter writer) {
+            writer.WriteVector2(savedPos);
+        }
+        public override void ReceiveExtraAI(BinaryReader reader) {
+            savedPos = reader.ReadVector2();
+        }
+        #endregion
     }
     public class WarlockProj : ModProjectile {
-        public float timeUntilTurning;
         public Player target;
         public float speed;
-        const int _MAXTIMELEFT = 1000;
+        public byte maxTimesTurned;
+        public int timeUntilTurning;
+
+        private int upCounter;
+        private byte timesTurned;
+        private const int _MAXTIMELEFT = 1000;
 
         public override void SetDefaults() {
             projectile.width = 16;
@@ -108,9 +170,13 @@ namespace Illuminum.NPCs.Bosses.FrigidWarlock {
         }
 
         public override void AI() {
-            if(projectile.timeLeft == _MAXTIMELEFT - timeUntilTurning) {
-                projectile.velocity = (projectile.DirectionTo(target.Center) * speed) + target.velocity;
+            upCounter++;
+            if (upCounter == timeUntilTurning && timesTurned < maxTimesTurned) {
+                projectile.velocity = (new Vector2(projectile.Center.X - target.Center.X, projectile.Center.Y - target.Center.Y).SafeNormalize(Vector2.Zero) * speed) * -1 + target.velocity;
+                timesTurned++;
+                upCounter = 0;
             }
+            projectile.rotation = projectile.velocity.ToRotation();
             Dust.NewDustPerfect(projectile.Center, DustID.Ice, Scale: 0.8f);
         }
     }
