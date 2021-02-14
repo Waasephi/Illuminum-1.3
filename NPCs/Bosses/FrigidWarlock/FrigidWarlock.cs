@@ -9,11 +9,15 @@ namespace Illuminum.NPCs.Bosses.FrigidWarlock {
     [AutoloadBossHead]
     public class FrigidWarlock : BaseNPC {
 
-        private ref float AIIncrementer => ref npc.ai[0];
-        private ref float State => ref npc.ai[1];
-        public ref float AttackTimer => ref npc.ai[2];
+        private ref float AIIncrementer => ref npc.ai[0]; // Timer for state change
+        private ref float State => ref npc.ai[1]; // State keeper
+        private ref float AttackTimer => ref npc.ai[2]; // Communal timer between attacks
+        private ref float AttackFourTimer => ref npc.ai[3]; // Specific to attack four! Do not use outside of that.
+
+        private bool _phase2;
+        private bool _shouldMoveDuringAttack; // Also specific to attack four!
         private Vector2 savedPos;
-        private const int MAXSTATES = 3;
+        private const int MAXSTATES = 3; // Increment if you add more attacks
 
         #region Basic Overridable Stuff
         public override void SetDefaults() {
@@ -41,10 +45,13 @@ namespace Illuminum.NPCs.Bosses.FrigidWarlock {
             npc.TargetClosest();
             ChangeState();
             GetState(State);
+            CheckIfPhaseShouldChange();
+            RotateBoss();
         }
+        private void RotateBoss() => npc.rotation = npc.velocity.Y * (float)npc.direction * 0.05f;
         private void ChangeState() {
             AIIncrementer++;
-            AttackTimer++;
+            AttackTimer += _phase2 == false ? 1 : 1.5f;
             if (AIIncrementer >= 10.ToSeconds()) {
                 State++;
                 if (State > MAXSTATES)
@@ -58,6 +65,7 @@ namespace Illuminum.NPCs.Bosses.FrigidWarlock {
             }
             AttackTimer = 0;
             AIIncrementer = 0;
+            _shouldMoveDuringAttack = true;
         }
         private void GetState(float st) {
             switch (st) {
@@ -73,10 +81,26 @@ namespace Illuminum.NPCs.Bosses.FrigidWarlock {
                     MovementStyleTwo();
                     AttackStyleThree();
                     break;
+                case 3:
+                    if (_phase2) {
+                        if (_shouldMoveDuringAttack)
+                            MovementStyleOne();
+                        AttackStyleFour();
+                    }
+                    else State = 0;
+                    break;
+
                 default:
                     State = 0;
                     break;
             }
+        }
+        private bool CheckIfPhaseShouldChange() {
+            if(npc.life <= npc.lifeMax / 2 && !_phase2) {
+                _phase2 = true;
+                Main.NewText("Phase 2 activated!");
+            }
+            return true;
         }
         #endregion
         public Player target => Main.player[npc.target];
@@ -139,6 +163,27 @@ namespace Illuminum.NPCs.Bosses.FrigidWarlock {
             }
             AttackTimer = 0;
         }
+        private void AttackStyleFour() {
+            if (AttackTimer < 3.ToSeconds())
+                return;
+            _shouldMoveDuringAttack = false;
+            npc.velocity = Vector2.Zero;
+            AttackFourTimer++;
+            var possiblePositions = new Vector2[] {
+                new Vector2(0, 1).RotatedBy(-(Math.PI / 6)),
+                new Vector2(0, 1),
+                new Vector2(0, 1).RotatedBy(Math.PI / 6)
+            };
+
+            if (AttackFourTimer >= 0.75f.ToSeconds()) {
+                for (int i = 0; i < 3; i++) {
+                    Projectile.NewProjectileDirect(npc.Center, possiblePositions[i] * 8, ModContent.ProjectileType<WarlockProj>(), 10, 10);
+                }
+                AttackFourTimer = 0;
+                AttackTimer = 0;
+                _shouldMoveDuringAttack = true;
+            }
+        }
         #endregion
 
         #region Sharing Fields
@@ -172,11 +217,11 @@ namespace Illuminum.NPCs.Bosses.FrigidWarlock {
         public override void AI() {
             upCounter++;
             if (upCounter == timeUntilTurning && timesTurned < maxTimesTurned) {
-                projectile.velocity = (new Vector2(projectile.Center.X - target.Center.X, projectile.Center.Y - target.Center.Y).SafeNormalize(Vector2.Zero) * speed) * -1 + target.velocity;
+                projectile.velocity = (new Vector2(projectile.Center.X - target.Center.X, projectile.Center.Y - target.Center.Y).SafeNormalize(Vector2.Zero) * speed) * -1;
                 timesTurned++;
                 upCounter = 0;
             }
-            projectile.rotation = projectile.velocity.ToRotation();
+            projectile.rotation = projectile.velocity.ToRotation() - MathHelper.PiOver2;
             Dust.NewDustPerfect(projectile.Center, DustID.Ice, Scale: 0.8f);
         }
     }
