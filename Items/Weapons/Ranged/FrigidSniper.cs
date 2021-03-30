@@ -25,7 +25,7 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.value = 10000;
 			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item40;
-			item.autoReuse = true;
+			item.autoReuse = false;
 			item.shoot = ProjectileID.PurificationPowder;    //idk why but all the guns in the vanilla source have this
 			item.shootSpeed = 12f;
 			item.useAmmo = AmmoID.Bullet;
