@@ -1,4 +1,4 @@
-/*using Terraria.ID;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Illuminum.Items.Vanity.BossMasks
@@ -21,4 +21,4 @@ namespace Illuminum.Items.Vanity.BossMasks
 			item.vanity = true;
 		}
 	}
-}*/
+}

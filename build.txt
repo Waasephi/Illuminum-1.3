@@ -1,4 +1,4 @@
-displayName = [c/b8063d:Illuminum] [c/be00c4:Mod]
+displayName = [c/bc3ab3:Illuminum Mod]
 author = Waasephi
 version = 0.1.1.3
 homepage = https://forums.terraria.org/index.php?threads/illuminum-mod.101729/
