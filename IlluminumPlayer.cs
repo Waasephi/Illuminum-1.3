@@ -24,7 +24,7 @@ namespace Illuminum
 		public bool boneZone;
 		public bool electroShield;
 		public bool lunarWrath;
-		public bool createVoidlands;
+		public bool createVoidlands; //reset = false; Useful for when modplayer starts getting really long.
 
 		public override void ResetEffects()
 		{
@@ -95,6 +95,16 @@ namespace Illuminum
 					IlluminumWorld.VoidlandsSpawned = true;
 					Main.NewText("The caverns have been absorbed into void.", 75, 75, 75);
 					WorldGen.TileRunner((int)cursorWorldPosition.X, (int)cursorWorldPosition.Y, 275, 100, ModContent.TileType<VoidStoneTile>());
+					int maxTileX = 100;
+					int maxTileY = 80;
+					int iterations = 3000;
+					for (int i = 0; i < iterations; i++)
+					{
+						int X = (int)(cursorWorldPosition.X) + WorldGen.genRand.Next(-maxTileX, maxTileX);
+						int Y = (int)(cursorWorldPosition.Y) + WorldGen.genRand.Next(-maxTileY, maxTileY);
+						int TileType = ModContent.TileType<VoidStoneTile>();
+						WorldGen.TileRunner(X, Y, 1000, WorldGen.genRand.Next(1, 2), TileType, false, 0f, 0f, true, true);
+					}
 					Main.mapFullscreen = false;
 					createVoidlands = false;
 				}

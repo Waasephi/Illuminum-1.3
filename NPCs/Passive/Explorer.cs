@@ -210,6 +210,9 @@ namespace Illuminum.NPCs.Passive
 			{
 				shop.item[nextSlot].SetDefaults(ModContent.ItemType<ChaliceoftheMoon>());
 				nextSlot++;
+			}
+			if (NPC.downedMoonlord)   //this make so when Moon Lord is killed the town npc will sell this
+			{
 				shop.item[nextSlot].SetDefaults(3456);
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults(3457);
