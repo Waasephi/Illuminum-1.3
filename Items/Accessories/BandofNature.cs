@@ -10,7 +10,9 @@ namespace Illuminum.Items.Accessories
 		{
 			DisplayName.SetDefault("Band of Nature");
 			Tooltip.SetDefault("Infused with the gifts of the earth." +
-                "\n+20 Mana, -5% Mana Cost, +3 Mana Regeneration.");
+                "\n+20 Mana" +
+                "\n-5% Mana Cost" +
+                "\n+3 Mana Regeneration.");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) //Where it says "p" is the variable used to represent "player". In this case, every p stands for player. This is called when the accessory is on.
