@@ -1,5 +1,4 @@
 using Illuminum.NPCs.Bosses.FrigidWarlock;
-using Illuminum.Items.Materials;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -27,26 +26,25 @@ namespace Illuminum.Items.Consumables
 			item.consumable = true;
 		}
 
+		/*public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(mod, "RelicShard", 5);
+			recipe.AddIngredient(mod, "AncientStone", 100);
+			recipe.AddTile(TileID.DemonAltar);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}*/
+
 		public override bool CanUseItem(Player player)
 		{
-			return player.ZoneSnow;
+			return true; // player.ZoneSnow;
 		}
 
 		public override bool UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<FrigidWarlock>());
 			return true;
-		}
-
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<VialofEvil>(), 5);
-			recipe.AddIngredient(ItemID.IceBlock, 25);
-			recipe.AddIngredient(ItemID.Silk, 5);
-			recipe.AddTile(26); //Demon Altars
-			recipe.SetResult(this);
-			recipe.AddRecipe();
 		}
 	}
 }

@@ -38,11 +38,11 @@ namespace Illuminum.Items.Weapons.Ranged
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 {
-		if (type == ProjectileID.WoodenArrowFriendly) // or ProjectileID.WoodenArrowFriendly
-		{
-			type = mod.ProjectileType("CrimriseArrowProjectile"); // or ProjectileID.FireArrow;
-		}
-		return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal
+	if (type == ProjectileID.WoodenArrowFriendly) // or ProjectileID.WoodenArrowFriendly
+	{
+		type = mod.ProjectileType("CrimriseArrowProjectile"); // or ProjectileID.FireArrow;
+	}
+	return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal
 }
 
 		public override void AddRecipes()

@@ -19,7 +19,7 @@ namespace Illuminum.Items.Weapons.Magic
 
 		public override void SetDefaults()
 		{
-			item.damage = 16;
+			item.damage = 22;
 			item.magic = true;
 			item.mana = 10;
 			item.width = 40;

@@ -32,7 +32,7 @@ namespace Illuminum.Items.Weapons.Melee
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
-			if (Main.rand.NextBool(7))
+			if (Main.rand.NextBool(2))
 			{
 				//Emit dusts when the sword is swung
 				Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 269);
