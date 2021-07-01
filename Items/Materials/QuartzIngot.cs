@@ -18,7 +18,7 @@ namespace Illuminum.Items.Materials
 			item.width = 30;
 			item.height = 24;
 			item.value = 400;
-			item.rare = 0;
+			item.rare = ItemRarityID.White;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.useTurn = true;
 			item.useAnimation = 15;

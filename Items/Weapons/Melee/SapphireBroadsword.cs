@@ -20,10 +20,10 @@ namespace Illuminum.Items.Weapons.Melee
 			item.height = 40;
 			item.useTime = 23;
 			item.useAnimation = 23;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
 			item.value = Item.sellPrice(silver: 20);
-			item.rare = 1;
+			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
 		}

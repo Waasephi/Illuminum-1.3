@@ -20,7 +20,7 @@ namespace Illuminum.Items.Armors.Hematite
 			item.width = 26;
 			item.height = 26;
 			item.value = 1000;
-			item.rare = 2;
+			item.rare = ItemRarityID.Green;
 			item.defense = 3;
 		}
 
@@ -55,7 +55,7 @@ namespace Illuminum.Items.Armors.Hematite
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "HematiteChunk", 10);
-			recipe.AddIngredient(151); //Necro Helmet
+			recipe.AddIngredient(ItemID.NecroHelmet); //Necro Helmet
 			recipe.AddTile(mod, "CursedForge");
 			recipe.SetResult(this);
 			recipe.AddRecipe();

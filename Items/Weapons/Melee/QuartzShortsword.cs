@@ -23,10 +23,10 @@ namespace Illuminum.Items.Weapons.Melee
 			item.height = 38;
 			item.useTime = 15;
 			item.useAnimation = 15;
-			item.useStyle = 3;
+			item.useStyle = ItemUseStyleID.Stabbing;
 			item.knockBack = 6;
 			item.value = 1500;
-			item.rare = 1;
+			item.rare = ItemRarityID.Blue;
 			item.shootSpeed = 3f;
 			item.scale = -0.5f;
 			item.UseSound = SoundID.Item1;

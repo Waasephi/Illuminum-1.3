@@ -30,7 +30,7 @@ namespace Illuminum.Items.Weapons.Magic
 			item.noMelee = true;
 			item.knockBack = 3;
 			item.value = Item.sellPrice(0, 0, 10, 0);
-			item.shoot = 8;
+			item.shoot = ProjectileID.VilethornTip;
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item43;
 			item.shootSpeed = 0.1f;
@@ -46,7 +46,7 @@ namespace Illuminum.Items.Weapons.Magic
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod,"VialofEvil", 8);
-			recipe.AddIngredient(3271, 75); //Sandstone Block
+			recipe.AddIngredient(ItemID.Sandstone, 75); //Sandstone Block
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

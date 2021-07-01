@@ -21,7 +21,7 @@ namespace Illuminum.Items.Weapons.Melee
 		{
 			shootCD = 0f; //Just reset to zero on dropped/crafted/etc.
 			item.damage = 10;
-			item.useStyle = 1; //Swing/Throw? Not holding out like arkhalis and terragrim?
+			item.useStyle = ItemUseStyleID.SwingThrow; //Swing/Throw? Not holding out like arkhalis and terragrim?
 			item.useAnimation = 20;
 			item.useTime = 10; //Altered some values for useTime and Animation. This is because it will continually shoot arkhalis projectiles or smth if timing is wrong.
 			item.shootSpeed = 40f;
@@ -39,7 +39,7 @@ namespace Illuminum.Items.Weapons.Melee
 			item.autoReuse = true; // Most spears don't autoReuse, but it's possible when used in conjunction with CanUseItem()
 
 			item.UseSound = SoundID.Item1;
-			item.shoot = 595;
+			item.shoot = ProjectileID.Arkhalis;
 		}
 		 public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {

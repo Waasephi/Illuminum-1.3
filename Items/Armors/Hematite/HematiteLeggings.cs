@@ -20,7 +20,7 @@ namespace Illuminum.Items.Armors.Hematite
 			item.width = 22;
 			item.height = 18;
 			item.value = Item.sellPrice(silver: 15);
-			item.rare = 2;
+			item.rare = ItemRarityID.Green;
 			item.defense = 5;
 		}
 
@@ -36,7 +36,7 @@ namespace Illuminum.Items.Armors.Hematite
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "HematiteChunk", 15);
-			recipe.AddIngredient(153); //Molten Leggings
+			recipe.AddIngredient(ItemID.NecroGreaves); //Molten Leggings
 			recipe.AddTile(mod, "CursedForge");
 			recipe.SetResult(this);
 			recipe.AddRecipe();

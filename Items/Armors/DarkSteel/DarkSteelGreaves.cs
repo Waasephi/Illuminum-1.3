@@ -20,7 +20,7 @@ namespace Illuminum.Items.Armors.DarkSteel
 			item.width = 22;
 			item.height = 18;
 			item.value = Item.sellPrice(silver: 15);
-			item.rare = 2;
+			item.rare = ItemRarityID.Green;
 			item.defense = 7;
 		}
 
@@ -36,7 +36,7 @@ namespace Illuminum.Items.Armors.DarkSteel
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "DarkSteelPlating", 15);
-			recipe.AddIngredient(233); //Molten Leggings
+			recipe.AddIngredient(ItemID.MoltenGreaves); //Molten Leggings
 			recipe.AddTile(mod, "CursedForge");
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -140,20 +140,20 @@ namespace Illuminum.Tiles
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(36); //Wooden Workbench
+			recipe.AddIngredient(ItemID.WorkBench); //Wooden Workbench
 			recipe.AddIngredient(ItemID.IronAnvil);
 			recipe.AddIngredient(ItemID.Hellforge);
-			recipe.AddIngredient(398); //Tinkerer's Workshop
+			recipe.AddIngredient(ItemID.TinkerersWorkshop); //Tinkerer's Workshop
 			recipe.AddIngredient(ItemID.Bone, 50);
 			recipe.AddTile(TileID.DemonAltar);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
 			ModRecipe recipe2 = new ModRecipe(mod);
-			recipe2.AddIngredient(36); //Wooden Workbench
+			recipe2.AddIngredient(ItemID.WorkBench); //Wooden Workbench
 			recipe2.AddIngredient(ItemID.LeadAnvil);
 			recipe2.AddIngredient(ItemID.Hellforge);
-			recipe2.AddIngredient(398); //Tinkerer's Workshop
+			recipe2.AddIngredient(ItemID.TinkerersWorkshop); //Tinkerer's Workshop
 			recipe2.AddIngredient(ItemID.Bone, 50);
 			recipe2.AddTile(TileID.DemonAltar);
 			recipe2.SetResult(this);

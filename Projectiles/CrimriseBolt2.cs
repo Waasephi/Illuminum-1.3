@@ -36,7 +36,7 @@ namespace Illuminum.Projectiles
 				projectile.velocity.X = projectile.velocity.X * 1.5f;    // projectile velocity
 				projectile.Kill();
 			}
-			int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 66, 0f, 0f, 100, new Color(92, 3, 13));
+			int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.Rainbow, 0f, 0f, 100, new Color(92, 3, 13));
 			Main.dust[dust].velocity *= 0.1f;
 			if (projectile.velocity == Vector2.Zero)
 			{

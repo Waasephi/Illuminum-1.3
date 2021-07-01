@@ -20,7 +20,7 @@ namespace Illuminum.Items.Armors.DarkSteel
 			item.width = 20;
 			item.height = 8;
 			item.value = 1000;
-			item.rare = 2;
+			item.rare = ItemRarityID.Green;
 			item.defense = 7;
 		}
 
@@ -54,7 +54,7 @@ namespace Illuminum.Items.Armors.DarkSteel
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "DarkSteelPlating", 10);
-			recipe.AddIngredient(231); //Molten Helmet
+			recipe.AddIngredient(ItemID.MoltenHelmet); //Molten Helmet
 			recipe.AddTile(mod, "CursedForge");
 			recipe.SetResult(this);
 			recipe.AddRecipe();

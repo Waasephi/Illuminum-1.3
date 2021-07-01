@@ -19,11 +19,11 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.height = 40;
 			item.useTime = 30;
 			item.useAnimation = 30;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
 			item.value = 2000;
-			item.rare = 0;
-			item.shoot = 4;
+			item.rare = ItemRarityID.White;
+			item.shoot = ProjectileID.UnholyArrow;
 			item.noMelee = true;
 			item.shootSpeed = 7f;
 			item.UseSound = SoundID.Item5;

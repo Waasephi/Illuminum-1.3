@@ -21,10 +21,10 @@ namespace Illuminum.Items.Weapons.Melee
 			item.height = 60;
 			item.useTime = 25;
 			item.useAnimation = 25;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
 			item.value = Item.sellPrice(silver: 78);
-			item.rare = 2;
+			item.rare = ItemRarityID.Green;
 			item.scale = 1.2f;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
@@ -32,10 +32,10 @@ namespace Illuminum.Items.Weapons.Melee
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
-			if (Main.rand.NextBool(2))
+			if (Main.rand.NextBool(7))
 			{
 				//Emit dusts when the sword is swung
-				Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 269);
+				Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.CursedTorch);
 			}
 		}
 

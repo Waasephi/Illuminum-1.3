@@ -23,7 +23,7 @@ namespace Illuminum.Items.Weapons.Melee
             item.width = 54;
             item.height = 40;
             item.value = Item.sellPrice(0, 1);
-            item.rare = 2;
+            item.rare = ItemRarityID.Green;
             item.noMelee = true;
             item.useStyle = ItemUseStyleID.HoldingOut;
             item.useAnimation = 15;
