@@ -1,5 +1,6 @@
 ﻿using Illuminum.Tiles;
 using Illuminum.Tiles.Voidlands;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using Terraria;
@@ -17,7 +18,42 @@ namespace Illuminum
 		public static bool VoidlandsSpawned = false;
 		public static int Voidlands = 0;
 
-		public override void Initialize()
+        public override void PreUpdate()
+        {
+			//Update all DrawEntities
+			
+			foreach (DrawEffect drawEffect in Illuminum.drawEffects)
+			{
+				drawEffect.Update();
+			}
+        }
+
+        public override void PostDrawTiles()
+		{
+			//Draw all DrawEntities
+
+			SpriteBatch spriteBatch = Main.spriteBatch;
+
+			spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, Main.GameViewMatrix.ZoomMatrix);
+
+			foreach (DrawEffect drawEffect in Illuminum.drawEffects)
+			{
+				drawEffect.PreDrawAll(spriteBatch);
+			}
+
+			foreach (DrawEffect drawEffect in Illuminum.drawEffects)
+			{
+				if (drawEffect.PreDraw(spriteBatch))
+				{
+					drawEffect.Draw(spriteBatch);
+					drawEffect.PostDraw(spriteBatch);
+				}
+			}
+
+			spriteBatch.End();
+		}
+
+        public override void Initialize()
 		{
 			downedFrigidConstruct = false;
 			Illuminated = false;

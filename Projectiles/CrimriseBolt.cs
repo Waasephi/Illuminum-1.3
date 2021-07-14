@@ -114,7 +114,7 @@ namespace Illuminum.Projectiles
                 {
 					Dust dust;
 					Vector2 position = projectile.Center;
-					dust = Main.dust[Terraria.Dust.NewDust(position, 0, 0, 174, 0f, 0f, 0, new Color(255, 255, 255), 1f)];
+					dust = Main.dust[Terraria.Dust.NewDust(position, 0, 0, DustID.VampireHeal, 0f, 0f, 0, new Color(255, 255, 255), 1f)];
 					dust.noGravity = true;
 				}
 

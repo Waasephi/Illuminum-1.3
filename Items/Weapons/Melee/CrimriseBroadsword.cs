@@ -1,4 +1,5 @@
 using Illuminum.Projectiles;
+using Illuminum.DrawEffects;
 using Illuminum.Items.Materials;
 using Terraria;
 using Terraria.ID;
@@ -14,8 +15,8 @@ namespace Illuminum.Items.Weapons.Melee
 		public override void SetStaticDefaults() 
 		{
 			 DisplayName.SetDefault("Crimrise Broadsword"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Gives Regeneration on hit by blade." +
-                "\nGives Bleeding to targets hit by blade.");
+			Tooltip.SetDefault("Gives Regeneration on hit." +
+                "\nGives Bleeding to targets hit.");
 		}
 
 		public override void SetDefaults() 
@@ -32,26 +33,20 @@ namespace Illuminum.Items.Weapons.Melee
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
-			item.shoot = ProjectileType<CrimriseBolt>();
-			item.shootSpeed = 6f;
 		}
 
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			// Add the Onfire buff to the NPC for 1 second when the weapon hits an NPC
 			// 60 frames = 1 second
-			player.AddBuff(BuffID.Regeneration, 120);
-			target.AddBuff(BuffID.Bleeding, 120);
-		}
+			player.AddBuff(BuffID.Regeneration, 10 * 60);
+			target.AddBuff(BuffID.Bleeding, 4 * 60);
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
-			speedY -= Math.Abs(speedY) * 0.5f;
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileType<CrimriseBolt>(), damage / 2, knockBack = 0.1f, player.whoAmI, ai1: 1);
-			Projectile.NewProjectile(position.X, position.Y, speedX - 1, speedY * 0.95f, ProjectileType<CrimriseBolt>(), damage / 2, knockBack = 0.1f, player.whoAmI, ai1: 1);
-			Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY * 0.95f, ProjectileType<CrimriseBolt>(), damage / 2, knockBack = 0.1f, player.whoAmI, ai1: 1);
-			return false;
-        }
+			for (int i = 0; i < 3; i++)
+			{
+				Illuminum.drawEffects.Add(new CrimriseSwordSparkle(target.position + new Vector2(Main.rand.NextFloat(target.width), Main.rand.NextFloat(target.height)), Vector2.Zero));
+			}
+		}
 
         public override void AddRecipes()
 		{
