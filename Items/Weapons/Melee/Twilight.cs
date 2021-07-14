@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Illuminum.Projectiles;
 using Terraria.ModLoader;
 
 namespace Illuminum.Items.Weapons.Melee
@@ -15,17 +16,17 @@ namespace Illuminum.Items.Weapons.Melee
 
 		public override void SetDefaults()
 		{
-			item.damage = 30;
+			item.damage = 38;
 			item.melee = true;
 			item.width = 60;
 			item.height = 60;
-			item.useTime = 40;
-			item.useAnimation = 40;
+			item.useTime = 30;
+			item.useAnimation = 30;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 4;
 			item.value = 10000;
 			item.rare = ItemRarityID.Green;
-			item.shoot = ProjectileID.BlackBolt;
+			item.shoot = ModContent.ProjectileType<TwilightProj>();
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shootSpeed = 8f;
@@ -45,12 +46,9 @@ namespace Illuminum.Items.Weapons.Melee
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			// Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
-			Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(25));
-			Projectile.NewProjectile(position.X, position.Y, speedX * 2, speedY * 2, ProjectileID.SkyFracture, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y, speedX * 2, speedY * 2, ProjectileID.SkyFracture, damage, knockBack, player.whoAmI);
-
-			return true;
+			Projectile.NewProjectile(position.X, position.Y - 10, speedX * 2, speedY * 2, type, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y + 10, speedX * 2, speedY * 2, type, damage, knockBack, player.whoAmI);
+			return false;
 		}
 	}
 }

@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Illuminum.Projectiles;
+using Microsoft.Xna.Framework;
 
 namespace Illuminum.Items.Weapons.Magic
 {
@@ -33,7 +34,16 @@ namespace Illuminum.Items.Weapons.Magic
 			item.noMelee = true;
 		}
 
-		public override void AddRecipes()
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			Projectile proj = Projectile.NewProjectileDirect(position, new Vector2(speedX, speedY), type, damage, knockBack, player.whoAmI, ai1: 3);
+			Projectile proj2 = Projectile.NewProjectileDirect(position, new Vector2(speedX, speedY), type, damage, knockBack, player.whoAmI, ai1: 4);
+			proj.timeLeft = 60;
+			proj2.timeLeft = 60;
+			return false;
+        }
+
+        public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "BrimstoneCrystal", 12);

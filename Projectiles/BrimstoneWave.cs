@@ -13,7 +13,7 @@ namespace Illuminum.Projectiles
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Brimstone Wave");
-			ProjectileID.Sets.TrailCacheLength[projectile.type] = 8;
+			ProjectileID.Sets.TrailCacheLength[projectile.type] = 6;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 0;
 		}
 
@@ -29,9 +29,18 @@ namespace Illuminum.Projectiles
 			projectile.extraUpdates = 1;
 		}
 
-		public override void Kill(int timeLeft)
+        public override void AI()
+        {
+			projectile.ai[0]++;
+			if (projectile.ai[1] == 3) projectile.velocity = projectile.velocity.RotatedBy(Math.Cos(projectile.ai[0] * 0.1f) * MathHelper.ToRadians(2f));
+			if (projectile.ai[1] == 4) projectile.velocity = projectile.velocity.RotatedBy(Math.Cos(projectile.ai[0] * 0.1f) * MathHelper.ToRadians(-2f));
+			if (projectile.ai[1] >= 3)
+			{
+				projectile.tileCollide = false;
+			}
+        }
+        public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(SoundID.Dig, (int)projectile.position.X, (int)projectile.position.Y, 1);
 			for (int num623 = 0; num623 < 50; num623++)
 			{
 				int num624 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, 0f, 0f, 100, default(Color), 1f);

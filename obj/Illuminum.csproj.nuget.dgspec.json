@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jjrat\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj": {}
+    "C:\\Users\\Mint\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jjrat\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj": {
+    "C:\\Users\\Mint\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jjrat\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj",
+        "projectUniqueName": "C:\\Users\\Mint\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj",
         "projectName": "Illuminum",
-        "projectPath": "C:\\Users\\Jjrat\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj",
-        "packagesPath": "C:\\Users\\Jjrat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jjrat\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\obj\\",
+        "projectPath": "C:\\Users\\Mint\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\Illuminum.csproj",
+        "packagesPath": "C:\\Users\\Mint\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mint\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Illuminum\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jjrat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mint\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "net45": {
+            "targetAlias": "net45",
             "projectReferences": {}
           }
         },
@@ -37,13 +38,14 @@
       },
       "frameworks": {
         "net45": {
+          "targetAlias": "net45",
           "dependencies": {
             "tModLoader.CodeAssist": {
               "target": "Package",
               "version": "[0.1.*, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
