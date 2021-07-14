@@ -30,7 +30,7 @@ namespace Illuminum.Items.Weapons.Magic
 			item.autoReuse = true;
 			item.knockBack = 3;
 			item.value = Item.sellPrice(0, 0, 12, 0);
-			item.shoot = ProjectileType<CrimriseBolt2>();
+			item.shoot = ProjectileType<CrimriseBolt>();
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item43;
 			item.shootSpeed = 12f;

@@ -16,10 +16,10 @@ namespace Illuminum.Items.Weapons.Melee
 
 		public override void SetDefaults()
 		{
-			item.damage = 38;
+			item.damage = 42;
 			item.melee = true;
-			item.width = 60;
-			item.height = 60;
+			item.width = 50;
+			item.height = 50;
 			item.useTime = 30;
 			item.useAnimation = 30;
 			item.useStyle = ItemUseStyleID.SwingThrow;

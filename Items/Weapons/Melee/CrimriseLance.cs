@@ -49,7 +49,9 @@ namespace Illuminum.Items.Weapons.Melee
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			// Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileType<CrimriseBolt>(), damage, knockBack = 0.1f, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileType<CrimriseBolt>(), damage, knockBack = 0.1f, player.whoAmI, ai1: 2);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileType<CrimriseBolt>(), damage, knockBack = 0.1f, player.whoAmI, ai1: 2);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileType<CrimriseBolt>(), damage, knockBack = 0.1f, player.whoAmI, ai1: 2);
 			// By returning true, the vanilla behavior will take place, which will shoot the 1st projectile, the one determined by the ammo.
 			return true;
 		}

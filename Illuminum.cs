@@ -1,12 +1,21 @@
+using Illuminum.Tiles;
+using Illuminum.Tiles.Voidlands;
+using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Collections.Generic;
 using Terraria;
-using Terraria.ID;
+using Terraria.GameContent.Generation;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
+using Terraria.World.Generation;
 
 namespace Illuminum
 {
 	public class Illuminum : Mod
 	{
+
+		public static List<DrawEffect> drawEffects = new List<DrawEffect>();
+
 		public override void UpdateMusic(ref int music, ref MusicPriority priority)
 		{
 			if (Main.myPlayer == -1 || Main.gameMenu || !Main.LocalPlayer.active)
