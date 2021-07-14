@@ -25,7 +25,7 @@ namespace Illuminum.Projectiles
 
 		public override void AI()
 		{
-			Lighting.AddLight(projectile.position, 0f, 0f, 1f);
+			Lighting.AddLight(projectile.position, 1f, 0.9f, 0f);
 			projectile.ai[0] += 1f;
 			if (projectile.ai[0] >= 500f)       //how much time the projectile can travel before landing
 			{
