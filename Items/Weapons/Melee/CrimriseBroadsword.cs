@@ -3,6 +3,7 @@ using Illuminum.Items.Materials;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using System;
 using Microsoft.Xna.Framework;
 using static Terraria.ModLoader.ModContent;
 
@@ -23,8 +24,8 @@ namespace Illuminum.Items.Weapons.Melee
 			item.melee = true;
 			item.width = 50;
 			item.height = 50;
-			item.useTime = 30;
-			item.useAnimation = 30;
+			item.useTime = 22;
+			item.useAnimation = 22;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
 			item.value = Item.sellPrice(silver: 15);
@@ -32,7 +33,7 @@ namespace Illuminum.Items.Weapons.Melee
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
 			item.shoot = ProjectileType<CrimriseBolt>();
-			item.shootSpeed = 2f;
+			item.shootSpeed = 6f;
 		}
 
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
@@ -43,9 +44,16 @@ namespace Illuminum.Items.Weapons.Melee
 			target.AddBuff(BuffID.Bleeding, 120);
 		}
 
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+			speedY -= Math.Abs(speedY) * 0.5f;
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileType<CrimriseBolt>(), damage / 2, knockBack = 0.1f, player.whoAmI, ai1: 1);
+			Projectile.NewProjectile(position.X, position.Y, speedX - 1, speedY * 0.95f, ProjectileType<CrimriseBolt>(), damage / 2, knockBack = 0.1f, player.whoAmI, ai1: 1);
+			Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY * 0.95f, ProjectileType<CrimriseBolt>(), damage / 2, knockBack = 0.1f, player.whoAmI, ai1: 1);
+			return false;
+        }
 
-
-		public override void AddRecipes()
+        public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "VialofEvil", 8);
