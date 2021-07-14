@@ -44,7 +44,7 @@ namespace Illuminum.Items.Weapons.Melee
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod, "VialofEvil", 8);
-            recipe.AddIngredient(3271, 75); //Sandstone Block
+            recipe.AddIngredient(ItemID.Sandstone, 75); //Sandstone Block
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();

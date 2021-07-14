@@ -17,14 +17,14 @@ namespace Illuminum.Items.Weapons.Melee
 			item.damage = 22;
 			item.melee = true;
 			item.width = 50;
-			item.height = 50;
+			item.height = 56;
 			item.useTime = 18;
 			item.useAnimation = 18;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
 			item.value = Item.sellPrice(silver: 20);
-			item.rare = 1;
-			item.scale = 0.8f;
+			item.rare = ItemRarityID.Blue;
+			item.scale = 0.9f;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 		}

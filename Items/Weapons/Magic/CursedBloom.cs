@@ -16,14 +16,14 @@ namespace Illuminum.Items.Weapons.Magic
 		{
 			item.damage = 52;
 			item.magic = true;
-			item.width = 40;
-			item.height = 40;
+			item.width = 50;
+			item.height = 50;
 			item.useTime = 30;
 			item.useAnimation = 30;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
 			item.value = 100;
-			item.rare = 2;
+			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = false;
 			item.shoot = ProjectileID.CursedFlameFriendly;
@@ -36,7 +36,7 @@ namespace Illuminum.Items.Weapons.Magic
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "DarkSteelPlating", 8);
-			recipe.AddIngredient(112); //Flower of Fire
+			recipe.AddIngredient(ItemID.FlowerofFire); //Flower of Fire
 			recipe.AddTile(mod, "CursedForge");
 			recipe.SetResult(this);
 			recipe.AddRecipe();

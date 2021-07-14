@@ -18,7 +18,7 @@ namespace Illuminum.Items.Materials
 			item.width = 30;
 			item.height = 24;
 			item.value = 400;
-			item.rare = 1;
+			item.rare = ItemRarityID.Blue;
 			item.useTurn = true;
 			item.useAnimation = 15;
 			item.useTime = 10;

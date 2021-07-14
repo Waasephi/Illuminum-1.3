@@ -37,6 +37,21 @@ namespace Illuminum.Tiles.Banners
                 case 0:
                     item = "QuartzSlimeBanner";
                     break;
+                case 1:
+                    item = "AngeliteTotemBanner";
+                    break;
+                case 2:
+                    item = "VoidWraithBanner";
+                    break;
+                case 3:
+                    item = "AbyssalTendrilBanner";
+                    break;
+                case 4:
+                    item = "MosscreepBanner";
+                    break;
+                case 5:
+                    item = "VoidCrabBanner";
+                    break;
                 default:
                     return;
             }
@@ -54,6 +69,21 @@ namespace Illuminum.Tiles.Banners
                 {
                     case 0:
                         type = "QuartzSlime";
+                        break;
+                    case 1:
+                        type = "AngeliteTotem";
+                        break;
+                    case 2:
+                        type = "VoidWraith";
+                        break;
+                    case 3:
+                        type = "AbyssalTendril";
+                        break;
+                    case 4:
+                        type = "Mosscreep";
+                        break;
+                    case 5:
+                        type = "VoidCrab";
                         break;
                     default:
                         return;

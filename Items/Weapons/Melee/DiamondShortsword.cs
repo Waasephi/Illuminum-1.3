@@ -22,10 +22,10 @@ namespace Illuminum.Items.Weapons.Melee
 			item.height = 40;
 			item.useTime = 13;
 			item.useAnimation = 13;
-			item.useStyle = 3;
+			item.useStyle = ItemUseStyleID.Stabbing;
 			item.knockBack = 6;
 			item.value = 1500;
-			item.rare = 1;
+			item.rare = ItemRarityID.Blue;
 			item.shootSpeed = 3.2f;
 			item.UseSound = SoundID.Item1;
 			item.noMelee = true; // Important because the spear is actually a projectile instead of an item. This prevents the melee hitbox of this item.

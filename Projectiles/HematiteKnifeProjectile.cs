@@ -109,7 +109,7 @@ namespace Illuminum.Projectiles
                     Vector2 velocity = Vector2.Normalize(target.Center - position) * 25;
 
                     int p = Projectile.NewProjectile(position, velocity,
-                        7, projectile.damage, projectile.knockBack, projectile.owner, -10f);
+                        ProjectileID.VilethornBase, projectile.damage, projectile.knockBack, projectile.owner, -10f);
 
                     if (p != Main.maxProjectiles)
                     {

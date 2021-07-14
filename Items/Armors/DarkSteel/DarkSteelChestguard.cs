@@ -20,7 +20,7 @@ namespace Illuminum.Items.Armors.DarkSteel
 			item.width = 36;
 			item.height = 22;
 			item.value = 2000;
-			item.rare = 2;
+			item.rare = ItemRarityID.Green;
 			item.defense = 10;
 		}
 
@@ -36,7 +36,7 @@ namespace Illuminum.Items.Armors.DarkSteel
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "DarkSteelPlating", 20);
-			recipe.AddIngredient(232); //Molten Chestplate
+			recipe.AddIngredient(ItemID.MoltenBreastplate); //Molten Chestplate
 			recipe.AddTile(mod, "CursedForge");
 			recipe.SetResult(this);
 			recipe.AddRecipe();

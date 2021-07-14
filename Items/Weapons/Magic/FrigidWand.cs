@@ -19,7 +19,7 @@ namespace Illuminum.Items.Weapons.Magic
 
 		public override void SetDefaults()
 		{
-			item.damage = 22;
+			item.damage = 16;
 			item.magic = true;
 			item.mana = 10;
 			item.width = 40;
@@ -31,7 +31,7 @@ namespace Illuminum.Items.Weapons.Magic
 			item.autoReuse = true;
 			item.knockBack = 3;
 			item.value = Item.sellPrice(0, 1, 10, 0);
-			item.shoot = 337;
+			item.shoot = ProjectileID.Blizzard;
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item43;
 			item.shootSpeed = 12f;

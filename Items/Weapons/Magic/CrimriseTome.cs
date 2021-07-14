@@ -70,7 +70,7 @@ namespace Illuminum.Items.Weapons.Magic
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "VialofEvil", 8);
-			recipe.AddIngredient(3271, 75); //Sandstone Block
+			recipe.AddIngredient(ItemID.Sandstone, 75); //Sandstone Block
 			recipe.AddIngredient(ItemID.Book);
 			recipe.AddTile(TileID.Bookcases);
 			recipe.SetResult(this);

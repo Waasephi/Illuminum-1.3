@@ -1,0 +1,25 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+
+namespace Illuminum.Items.Materials
+{
+	public class SteelPetal2 : ModItem
+	{
+		public override void SetStaticDefaults() 
+		{
+			 DisplayName.SetDefault("Steel Petal"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			Tooltip.SetDefault("A sharp chunk of steel. It has a slight shock feeling...");
+		}
+
+		public override void SetDefaults() 
+		{
+			item.width = 14;
+			item.height = 18;
+			item.value = Item.buyPrice(gold: 25);
+			item.rare = ItemRarityID.LightRed;
+			item.maxStack = 1;
+		}
+	}
+}

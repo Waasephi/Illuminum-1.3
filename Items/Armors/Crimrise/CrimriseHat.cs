@@ -51,7 +51,7 @@ namespace Illuminum.Items.Armors.Crimrise
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "VialofEvil", 5);
-			recipe.AddIngredient(3271, 50); //Sandstone Block
+			recipe.AddIngredient(ItemID.Sandstone, 50); //Sandstone Block
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -25,10 +25,10 @@ namespace Illuminum.Items.Weapons.Melee
 			item.height = 50;
 			item.useTime = 30;
 			item.useAnimation = 30;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
 			item.value = Item.sellPrice(silver: 15);
-			item.rare = 1;
+			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
 			item.shoot = ProjectileType<CrimriseBolt>();
@@ -49,7 +49,7 @@ namespace Illuminum.Items.Weapons.Melee
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "VialofEvil", 8);
-			recipe.AddIngredient(3271, 75); //Sandstone Block
+			recipe.AddIngredient(ItemID.Sandstone, 75); //Sandstone Block
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -23,11 +23,11 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.height = 46;
 			item.useTime = 30;
 			item.useAnimation = 30;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 2;
 			item.value = 2000;
-			item.rare = 1;
-			item.shoot = 4;
+			item.rare = ItemRarityID.Blue;
+			item.shoot = ProjectileID.UnholyArrow;
 			item.noMelee = true;
 			item.shootSpeed = 7f;
 			item.UseSound = SoundID.Item5;
@@ -38,18 +38,18 @@ namespace Illuminum.Items.Weapons.Ranged
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 {
-	if (type == ProjectileID.WoodenArrowFriendly) // or ProjectileID.WoodenArrowFriendly
-	{
-		type = mod.ProjectileType("CrimriseArrowProjectile"); // or ProjectileID.FireArrow;
-	}
-	return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal
+		if (type == ProjectileID.WoodenArrowFriendly) // or ProjectileID.WoodenArrowFriendly
+		{
+			type = mod.ProjectileType("CrimriseArrowProjectile"); // or ProjectileID.FireArrow;
+		}
+		return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal
 }
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "VialofEvil", 8);
-			recipe.AddIngredient(3271, 50); //Sandstone Block
+			recipe.AddIngredient(ItemID.Sandstone, 50); //Sandstone Block
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

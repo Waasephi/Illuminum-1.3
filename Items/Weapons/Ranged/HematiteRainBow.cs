@@ -27,10 +27,10 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.noMelee = true;
 			item.autoReuse = false;
 			item.knockBack = 3;
-			item.shoot = 4;
+			item.shoot = ProjectileID.UnholyArrow;
 			item.value = Item.sellPrice(0, 0, 72, 0);
 			item.useAmmo = AmmoID.Arrow;
-			item.rare = 2;
+			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item5;
 			item.shootSpeed = 8f;
 		}

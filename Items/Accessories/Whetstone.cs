@@ -24,7 +24,7 @@ namespace Illuminum.Items.Accessories
 			item.width = 52;
 			item.height = 36;
 			item.value = 10000;
-			item.rare = 1;
+			item.rare = ItemRarityID.Blue;
 			item.accessory = true;
 			item.expert = false;
 		}
