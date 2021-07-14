@@ -39,8 +39,6 @@ namespace Illuminum.Items.Weapons.Ranged
 		{
 			if (type == ProjectileID.WoodenArrowFriendly) // or ProjectileID.WoodenArrowFriendly
 			{
-				speedX /= 3;
-				speedY /= 3;
 				type = ProjectileID.JestersArrow; // or ProjectileID.FireArrow;
 			}
 		return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal

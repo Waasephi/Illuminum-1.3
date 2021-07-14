@@ -175,7 +175,7 @@ namespace Illuminum
 			{
 				return;
 			}
-			if (player.ZoneBeach && liquidType == 0 && Main.rand.NextBool(50))
+			if (player.ZoneBeach && liquidType == 0 && Main.rand.NextBool(20))
 			{
 				caughtType = ModContent.ItemType<GunFish>();
 			}

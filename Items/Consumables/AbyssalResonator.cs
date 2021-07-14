@@ -32,8 +32,8 @@ namespace Illuminum.Items.Consumables
 
 		public override bool CanUseItem(Player player)
 		{
-            if (IlluminumWorld.VoidlandsSpawned == false) ;
-            return true;
+			if (IlluminumWorld.VoidlandsSpawned == false) ;
+			return true;
 		}
 
 		public override bool UseItem(Player player)

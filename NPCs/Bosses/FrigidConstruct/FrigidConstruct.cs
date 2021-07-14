@@ -1,5 +1,5 @@
 ﻿using Illuminum.Items.Vanity.BossMasks;
-using Illuminum.Items.Weapons.Melee.Waved;
+using Illuminum.Items.Weapons.Melee;
 using Illuminum.Items.Weapons.Magic;
 using Illuminum.Items.Weapons.Ranged;
 using Illuminum.Items.Weapons.Summoner;
