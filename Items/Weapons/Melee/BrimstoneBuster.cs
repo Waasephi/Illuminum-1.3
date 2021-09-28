@@ -13,7 +13,7 @@ namespace Illuminum.Items.Weapons.Melee
 		public override void SetStaticDefaults() 
 		{
 			 DisplayName.SetDefault("Brimstone Buster"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Shoots brimstone waves that slow over time.");
+			Tooltip.SetDefault("Shoots swift brimstone slashes");
 		}
 
 		public override void SetDefaults() 
@@ -22,8 +22,8 @@ namespace Illuminum.Items.Weapons.Melee
 			item.melee = true;
 			item.width = 46;
 			item.height = 48;
-			item.useTime = 40;
-			item.useAnimation = 40;
+			item.useTime = 20;
+			item.useAnimation = 20;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
 			item.value = Item.sellPrice(gold: 2);
@@ -31,7 +31,7 @@ namespace Illuminum.Items.Weapons.Melee
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = ModContent.ProjectileType<BrimstoneWave>();
-			item.shootSpeed = 13f;
+			item.shootSpeed = 16f;
 			item.scale *= 1.2f;
 		}
 
