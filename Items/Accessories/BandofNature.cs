@@ -24,7 +24,7 @@ namespace Illuminum.Items.Accessories
 
 		public override void SetDefaults()
 		{
-			item.width = 52;
+			item.width = 42;
 			item.height = 36;
 			item.value = 10000;
 			item.rare = ItemRarityID.Blue;

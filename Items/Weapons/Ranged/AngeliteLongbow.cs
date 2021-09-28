@@ -19,8 +19,8 @@ namespace Illuminum.Items.Weapons.Ranged
 		{
 			item.damage = 40;
 			item.ranged = true;
-			item.width = 24;
-			item.height = 50;
+			item.width = 38;
+			item.height = 68;
 			item.useTime = 35;
 			item.useAnimation = 35;
 			item.useStyle = ItemUseStyleID.SwingThrow;

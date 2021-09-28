@@ -19,8 +19,8 @@ namespace Illuminum.Items.Weapons.Ranged
 		{
 			item.damage = 12;
 			item.ranged = true;
-			item.width = 26;
-			item.height = 50;
+			item.width = 24;
+			item.height = 42;
 			item.useTime = 35;
 			item.useAnimation = 35;
 			item.knockBack = 2;
