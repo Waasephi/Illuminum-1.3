@@ -14,8 +14,8 @@ namespace Illuminum.Projectiles
 
 		public override void SetDefaults()
 		{
-			projectile.width = 18;
-			projectile.height = 18;
+			projectile.width = 30;
+			projectile.height = 60;
 			projectile.aiStyle = 19;
 			projectile.penetrate = -1;
 			projectile.scale = 1.1f;

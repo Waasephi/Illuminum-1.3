@@ -17,7 +17,7 @@ namespace Illuminum.Items.Armors.Crimrise
 
 		public override void SetDefaults()
 		{
-			item.width = 34;
+			item.width = 28;
 			item.height = 24;
 			item.value = Item.sellPrice(silver: 20);
 			item.rare = ItemRarityID.Blue;

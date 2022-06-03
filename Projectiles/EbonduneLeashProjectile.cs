@@ -18,9 +18,8 @@ namespace Illuminum.Projectiles
 
         public override void SetDefaults()
         {
-            projectile.width = 22;
-            projectile.height = 20;
-            projectile.scale = 1.5f;
+            projectile.width = 38;
+            projectile.height = 30;
             projectile.friendly = true;
             projectile.penetrate = -1;
             projectile.melee = true;
@@ -135,6 +134,7 @@ namespace Illuminum.Projectiles
         {
             //retract
             projectile.ai[0] = 1f;
+            Main.PlaySound(SoundID.Dig, (int)projectile.position.X, (int)projectile.position.Y);
             return false;
         }
 
@@ -147,7 +147,7 @@ namespace Illuminum.Projectiles
             Vector2 position = projectile.Center;
             Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;
             Rectangle? sourceRectangle = new Rectangle?();
-            Vector2 origin = new Vector2(texture.Width * 0.5f, texture.Height * 0.5f);
+            Vector2 origin = new Vector2(texture.Width * 0.5f, texture.Height);
             float num1 = texture.Height;
             Vector2 vector24 = mountedCenter - position;
             float rotation = (float)Math.Atan2(vector24.Y, vector24.X) - 1.57f;

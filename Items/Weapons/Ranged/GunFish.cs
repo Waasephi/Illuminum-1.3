@@ -13,7 +13,7 @@ namespace Illuminum.Items.Weapons.Ranged
 
 		public override void SetDefaults()
 		{
-			item.damage = 26;
+			item.damage = 20;
 			item.ranged = true;
 			item.width = 72;
 			item.height = 26;
@@ -22,7 +22,7 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 4;
-			item.value = 10000;
+			item.value = Item.sellPrice(silver: 35);
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item40;
 			item.autoReuse = false;

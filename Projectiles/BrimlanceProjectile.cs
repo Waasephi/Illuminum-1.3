@@ -38,7 +38,7 @@ namespace Illuminum.Projectiles
 		{
 			Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 69);
 			Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 27);
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, 0, ProjectileID.DD2ExplosiveTrapT2Explosion, projectile.damage, projectile.knockBack, projectile.owner);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y - 32, 0, 0, ProjectileID.DD2ExplosiveTrapT2Explosion, projectile.damage, projectile.knockBack, projectile.owner);
 			for (int i = 0; i < 5; i++)
 			{
 				int d = Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.Fire);

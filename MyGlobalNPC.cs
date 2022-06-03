@@ -21,21 +21,21 @@ namespace Illuminum
 					break;
 
 				case NPCID.GraniteFlyer:
-					if (Main.rand.Next(100) == 0)
+					if (Main.rand.Next(30) == 0)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<GraniteCore>());
 					}
 					break;
 
 				case NPCID.GraniteGolem:
-					if (Main.rand.Next(75) == 0)
+					if (Main.rand.Next(20) == 0)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<GraniteWarhammer>());
 					}
 					break;
 
 				case NPCID.GreekSkeleton:
-					if (Main.rand.Next(75) == 0)
+					if (Main.rand.Next(35) == 0)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<GladiantGlaive>());
 					}

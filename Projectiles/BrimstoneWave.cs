@@ -24,7 +24,7 @@ namespace Illuminum.Projectiles
 			projectile.timeLeft = 210;
 			projectile.height = 20;
 			projectile.width = 30;
-			projectile.penetrate = 2;
+			projectile.penetrate = 5;
 			aiType = ProjectileID.Bullet;
 			projectile.extraUpdates = 1;
 		}
@@ -48,7 +48,7 @@ namespace Illuminum.Projectiles
 		{
 			for (int num623 = 0; num623 < 50; num623++)
 			{
-				int num624 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, 0f, 0f, 100, default(Color), 1f);
+				int num624 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, DustID.Fire, 0f, 0f, 100, default(Color), 1f);
 				Main.dust[num624].noGravity = true;
 				Main.dust[num624].velocity *= 1.5f;
 			}

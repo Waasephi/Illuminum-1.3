@@ -24,7 +24,7 @@ namespace Illuminum.Items.Weapons.Magic
 			item.useAnimation = 30;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.knockBack = 2;
-			item.value = 100;
+			item.value = Item.sellPrice(gold: 1);
 			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item43;
 			item.autoReuse = true;

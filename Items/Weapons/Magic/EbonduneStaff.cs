@@ -19,17 +19,17 @@ namespace Illuminum.Items.Weapons.Magic
 
 		public override void SetDefaults()
 		{
-			item.damage = 12;
+			item.damage = 25;
 			item.magic = true;
 			item.mana = 10;
-			item.width = 40;
-			item.height = 40;
+			item.width = 50;
+			item.height = 50;
 			item.useTime = 23;
 			item.useAnimation = 23;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 3;
-			item.value = Item.sellPrice(0, 0, 10, 0);
+			item.value = Item.sellPrice(0, 0, 60, 0);
 			item.shoot = ProjectileID.VilethornTip;
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item43;

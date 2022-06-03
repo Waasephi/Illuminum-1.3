@@ -1,5 +1,6 @@
 using Illuminum.Items.Materials;
 using Illuminum.Tiles;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -15,9 +16,9 @@ namespace Illuminum.Items.Materials
 
 		public override void SetDefaults() 
 		{
-			item.width = 30;
-			item.height = 24;
-			item.value = 400;
+			item.width = 20;
+			item.height = 20;
+			item.value = Item.sellPrice(silver: 25);
 			item.rare = ItemRarityID.Blue;
 			item.useTurn = true;
 			item.useAnimation = 15;

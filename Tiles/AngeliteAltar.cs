@@ -29,9 +29,9 @@ namespace Illuminum.Tiles
 
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
 		{
-			r = 2f;
-			g = 1.5f;
-			b = 1.5f;
+			r = 0.1f;
+			g = 0.1f;
+			b = 0.1f;
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)

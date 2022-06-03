@@ -22,7 +22,7 @@ namespace Illuminum.Items.Weapons.Melee
 			item.useAnimation = 34;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 5;
-			item.value = Item.sellPrice(silver: 5);
+			item.value = Item.sellPrice(silver: 20);
 			item.rare = ItemRarityID.Blue;
 			item.scale = 1.1f;
 			item.UseSound = SoundID.Item1;

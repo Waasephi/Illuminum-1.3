@@ -15,7 +15,7 @@ namespace Illuminum.Items.Weapons.Ranged
 
 		public override void SetDefaults()
 		{
-			item.damage = 37;
+			item.damage = 28;
 			item.ranged = true;
 			item.width = 46;
 			item.height = 26;

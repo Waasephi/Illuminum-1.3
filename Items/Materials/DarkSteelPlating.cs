@@ -1,5 +1,6 @@
 using Illuminum.Items.Materials;
 using Illuminum.Tiles;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -18,7 +19,7 @@ namespace Illuminum.Items.Materials
 		{
 			item.width = 30;
 			item.height = 26;
-			item.value = 400;
+			item.value = Item.sellPrice(silver: 50);
 			item.rare = ItemRarityID.Blue;
 			item.useTurn = true;
 			item.useAnimation = 15;
@@ -33,7 +34,7 @@ namespace Illuminum.Items.Materials
 			recipe.AddIngredient(ItemID.DemoniteBar, 2);
 			recipe.AddIngredient(ItemID.ShadowScale, 5);
 			recipe.AddIngredient(ItemID.HellstoneBar, 1);
-			recipe.AddIngredient(ItemID.MeteoriteBar, 5);
+			recipe.AddIngredient(ItemID.MeteoriteBar, 2);
 			recipe.AddTile(mod, "CursedForge");
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -19,9 +19,9 @@ namespace Illuminum
 		public bool megaDragon;
 		public bool ZoneVoidlands;
 		public bool darkCorruptor;
-		public bool hematiteSticker;
+		public bool hematiteReaver;
 		public bool ebonriseSpirit;
-		public bool miniBetsy;
+		public bool miniDragon;
 		public bool glacialSpirit;
 		public bool overgrowthBiter;
 		public bool boneZone;
@@ -32,6 +32,8 @@ namespace Illuminum
 		public bool poisonGlove;
 		public bool frozenQuiver;
 		public bool frostStone;
+		public bool darkSteelSet;
+		public bool dragonSet;
 
 		public override void ResetEffects()
 		{
@@ -41,9 +43,9 @@ namespace Illuminum
 			megaDragon = false;
 			voidSpirit = false;
 			darkCorruptor = false;
-			hematiteSticker = false;
+			hematiteReaver = false;
 			ebonriseSpirit = false;
-			miniBetsy = false;
+			miniDragon = false;
 			glacialSpirit = false;
 			overgrowthBiter = false;
 			boneZone = false;
@@ -53,6 +55,8 @@ namespace Illuminum
 			poisonGlove = false;
 			frozenQuiver = false;
 			frostStone = false;
+			darkSteelSet = false;
+			dragonSet = false;
 		}
 
 		public override void UpdateBiomes()
@@ -134,6 +138,13 @@ namespace Illuminum
 					Main.projectile[p].timeLeft = 60;
 				}
 			}
+			if (dragonSet)
+			{
+				{
+					Main.PlaySound(SoundID.Item, (int)player.position.X, (int)player.position.Y, 69);
+					int p = Projectile.NewProjectile(player.position, new Vector2(0, 0), ProjectileID.DD2ExplosiveTrapT3Explosion, 150, 0.5f, player.whoAmI);
+				}
+			}
 			if (boneZone)
 			{
 				float xVel = Main.rand.NextFloat(-5f, 5f);
@@ -196,9 +207,17 @@ namespace Illuminum
 			{
 				target.AddBuff(BuffID.Poisoned, 3 * 60);
 			}
+			if (item.melee && dragonSet)
+			{
+				target.AddBuff(BuffID.BetsysCurse, 3 * 60);
+			}
 			if (frostStone)
 			{
 				target.AddBuff(BuffID.Frostburn, 1 * 60);
+			}
+			if (darkSteelSet)
+			{
+				target.AddBuff(BuffID.CursedInferno, 1 * 60);
 			}
 		}
 
@@ -212,6 +231,10 @@ namespace Illuminum
 			{
 				target.AddBuff(BuffID.Poisoned, 3 * 60);
 			}
+			if (proj.melee && dragonSet)
+			{
+				target.AddBuff(BuffID.BetsysCurse, 3 * 60);
+			}
 			if (proj.ranged && frozenQuiver)
 			{
 				target.AddBuff(BuffID.Frostburn, 3 * 60);
@@ -219,6 +242,10 @@ namespace Illuminum
 			if (frostStone)
 			{
 				target.AddBuff(BuffID.Frostburn, 1 * 60);
+			}
+			if (darkSteelSet)
+			{
+				target.AddBuff(BuffID.CursedInferno, 1 * 60);
 			}
 		}
 	}

@@ -24,7 +24,7 @@ namespace Illuminum.Items.Weapons.Melee
 			item.useAnimation = 13;
 			item.useStyle = ItemUseStyleID.Stabbing;
 			item.knockBack = 6;
-			item.value = 1500;
+			item.value = Item.sellPrice(silver: 40);
 			item.rare = ItemRarityID.Blue;
 			item.shootSpeed = 3.2f;
 			item.UseSound = SoundID.Item1;

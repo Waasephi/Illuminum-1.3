@@ -19,10 +19,10 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.ranged = true;
 			item.width = 32;
 			item.height = 22;
-			item.useTime = 36;
-			item.useAnimation = 36;
+			item.useTime = 40;
+			item.useAnimation = 40;
 			item.knockBack = 6;
-			item.value = Item.sellPrice(silver: 17);
+			item.value = Item.sellPrice(silver: 38);
 			item.rare = ItemRarityID.Blue;
 			item.shoot = ProjectileID.UnholyArrow;
 			item.noMelee = true;

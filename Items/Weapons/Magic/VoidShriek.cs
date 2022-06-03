@@ -21,8 +21,8 @@ namespace Illuminum.Items.Weapons.Magic
 			item.shootSpeed = 10f;
 			item.shoot = ProjectileID.LostSoulFriendly;
 			item.UseSound = SoundID.Item103;
-			item.width = 42;
-			item.height = 44;
+			item.width = 34;
+			item.height = 40;
 			item.useTime = 32;
 			item.useAnimation = 32;
 			item.useStyle = ItemUseStyleID.HoldingOut;
@@ -34,6 +34,7 @@ namespace Illuminum.Items.Weapons.Magic
 			item.autoReuse = true;
 			item.rare = ItemRarityID.Green;
 			item.mana = 16;
+			item.value = Item.sellPrice(gold: 7);
 		}
 
 		public override void AddRecipes()

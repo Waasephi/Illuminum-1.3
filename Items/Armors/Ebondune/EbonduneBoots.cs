@@ -17,7 +17,7 @@ namespace Illuminum.Items.Armors.Ebondune
 
 		public override void SetDefaults()
 		{
-			item.width = 30;
+			item.width = 26;
 			item.height = 16;
 			item.value = Item.sellPrice(silver: 15);
 			item.rare = ItemRarityID.Blue;
@@ -30,6 +30,14 @@ namespace Illuminum.Items.Armors.Ebondune
 			//player.statManaMax2 += 20;
 			//player.maxMinions+=2;
 			//player.AddBuff(BuffID.Shine, 2);
+		}
+
+		public class EbonduneLegs : EquipTexture
+		{
+			public override bool DrawLegs()
+			{
+				return false;
+			}
 		}
 
 		public override void AddRecipes()

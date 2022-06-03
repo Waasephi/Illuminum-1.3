@@ -8,7 +8,6 @@ namespace Illuminum.Walls
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Angelite Brick Wall");
-			Tooltip.SetDefault("Good with paints.");
 		}
 
 		public override void SetDefaults()

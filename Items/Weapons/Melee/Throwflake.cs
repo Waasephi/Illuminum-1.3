@@ -23,7 +23,7 @@ namespace Illuminum.Items.Weapons.Melee
 			item.noUseGraphic = true;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 3;
-			item.value = 8;
+			item.value = Item.sellPrice(silver: 80);
 			item.rare = ItemRarityID.Blue;
 			item.shootSpeed = 12f;
 			item.shoot = ModContent.ProjectileType<ThrowflakeProjectile>();

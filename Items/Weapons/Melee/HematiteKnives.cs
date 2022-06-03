@@ -22,33 +22,24 @@ namespace Illuminum.Items.Weapons.Melee
             item.damage = 25;
             item.width = 54;
             item.height = 40;
-            item.value = Item.sellPrice(0, 1);
+            item.value = Item.sellPrice(silver: 80);
             item.rare = ItemRarityID.Green;
             item.noMelee = true;
             item.useStyle = ItemUseStyleID.HoldingOut;
-            item.useAnimation = 15;
-            item.useTime = 15;
+            item.useAnimation = 10;
+            item.useTime = 10;
             item.knockBack = 1f;
             item.noUseGraphic = true;
-            item.shoot = ModContent.ProjectileType<HematiteKnifeProjectile>();
-            item.shootSpeed = 30f;
+            item.shoot = ProjectileType<HematiteKnife>();
+            item.shootSpeed = 15f;
             item.UseSound = SoundID.Item1;
             item.melee = true;
             item.autoReuse = true;
         }
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
-            // Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
-            Projectile.NewProjectile(position.X, position.Y, speedX / 2, speedY / 2, ProjectileType<HematiteKnifeProjectile>(), damage, knockBack, player.whoAmI);
-            // By returning true, the vanilla behavior will take place, which will shoot the 1st projectile, the one determined by the ammo.
-            return true;
-        }
-
         public override bool CanUseItem(Player player)
         {
-            // Ensures no more than one spear can be thrown out, use this when using autoReuse
-            return player.ownedProjectileCounts[item.shoot] < 1;
+            return player.ownedProjectileCounts[item.shoot] < 2;
         }
 
         public override void AddRecipes()

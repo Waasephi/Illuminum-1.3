@@ -29,7 +29,7 @@ namespace Illuminum.Items.Weapons.Summoner
             item.useStyle = ItemUseStyleID.SwingThrow;
             item.noMelee = true;
             item.knockBack = 3;
-            item.value = Item.buyPrice(0, 1, 0, 0);
+            item.value = Item.sellPrice(0, 1, 0, 0);
             item.rare = ItemRarityID.Cyan;
             item.UseSound = SoundID.Item44;
             item.shoot = ProjectileType<FrigidWarlite>();

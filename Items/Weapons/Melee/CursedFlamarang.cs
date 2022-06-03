@@ -23,7 +23,7 @@ namespace Illuminum.Items.Weapons.Melee
 			item.noUseGraphic = true;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 3;
-			item.value = 8;
+			item.value = Item.sellPrice(silver: 55);
 			item.rare = ItemRarityID.Blue;
 			item.shootSpeed = 12f;
 			item.shoot = ModContent.ProjectileType<CursedFlamarangProjectile>();
@@ -35,7 +35,7 @@ namespace Illuminum.Items.Weapons.Melee
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "DarkSteelPlating", 8);
-			recipe.AddIngredient(ItemID.FieryGreatsword);
+			recipe.AddIngredient(ItemID.Flamarang);
 			recipe.AddTile(mod, "CursedForge");
 			recipe.SetResult(this);
 			recipe.AddRecipe();

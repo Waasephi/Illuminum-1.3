@@ -29,7 +29,7 @@ namespace Illuminum.Items.Weapons.Magic
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 3;
-			item.value = Item.sellPrice(0, 0, 10, 0);
+			item.value = Item.sellPrice(0, 0, 40, 0);
 			item.shoot = ProjectileID.SporeGas2;
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item43;

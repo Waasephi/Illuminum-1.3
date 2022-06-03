@@ -17,8 +17,8 @@ namespace Illuminum.Items.Armors.Hematite
 
 		public override void SetDefaults()
 		{
-			item.width = 26;
-			item.height = 26;
+			item.width = 20;
+			item.height = 20;
 			item.value = 1000;
 			item.rare = ItemRarityID.Green;
 			item.defense = 3;

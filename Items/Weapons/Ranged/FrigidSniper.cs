@@ -22,7 +22,7 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 4;
-			item.value = 10000;
+			item.value = Item.sellPrice(gold: 1);
 			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item40;
 			item.autoReuse = false;

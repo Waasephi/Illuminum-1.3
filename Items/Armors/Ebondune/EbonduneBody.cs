@@ -17,8 +17,8 @@ namespace Illuminum.Items.Armors.Ebondune
 
 		public override void SetDefaults()
 		{
-			item.width = 30;
-			item.height = 16;
+			item.width = 34;
+			item.height = 22;
 			item.value = 2000;
 			item.rare = ItemRarityID.Blue;
 			item.defense = 5;
@@ -31,6 +31,14 @@ namespace Illuminum.Items.Armors.Ebondune
 			//player.statManaMax2 += 20;
 			//player.maxMinions++;
 			//player.AddBuff(BuffID.Shine, 2);
+		}
+
+		public class EbonduneChest : EquipTexture
+		{
+			public override bool DrawBody()
+			{
+				return false;
+			}
 		}
 
 		public override void AddRecipes()

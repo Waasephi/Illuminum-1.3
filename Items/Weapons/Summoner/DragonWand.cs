@@ -12,7 +12,7 @@ namespace Illuminum.Items.Weapons.Summoner
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Dragon Wand");
-            Tooltip.SetDefault("Summons a Mini Betsy to fight for you.");
+            Tooltip.SetDefault("Summons a Mini Dragon to fight for you.");
             ItemID.Sets.GamepadWholeScreenUseRange[item.type] = true;
             ItemID.Sets.LockOnIgnoresCollision[item.type] = true;
         }
@@ -32,8 +32,8 @@ namespace Illuminum.Items.Weapons.Summoner
             item.value = Item.buyPrice(0, 5, 0, 0);
             item.rare = ItemRarityID.Cyan;
             item.UseSound = SoundID.Item44;
-            item.shoot = ProjectileType<MiniBetsy>();
-            item.buffType = BuffType<Buffs.MiniBetsyBuff>(); //The buff added to player after used the item
+            item.shoot = ProjectileType<MiniDragon>();
+            item.buffType = BuffType<Buffs.MiniDragonBuff>(); //The buff added to player after used the item
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

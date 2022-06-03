@@ -24,7 +24,7 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.useTime = 25;
 			item.useAnimation = 25;
 			item.knockBack = 2;
-			item.value = 2000;
+			item.value = Item.sellPrice(silver: 90);
 			item.rare = ItemRarityID.Green;
 			item.shoot = ProjectileID.UnholyArrow;
 			item.noMelee = true;

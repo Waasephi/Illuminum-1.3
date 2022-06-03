@@ -36,7 +36,7 @@ namespace Illuminum.Items.Weapons.Melee
 			item.noUseGraphic = true;
 
 			item.UseSound = SoundID.Item1;
-			item.value = Item.sellPrice(gold: 2);
+			item.value = Item.sellPrice(silver: 60);
 			item.shoot = ModContent.ProjectileType<IceBallProjectile>();
 		}
 

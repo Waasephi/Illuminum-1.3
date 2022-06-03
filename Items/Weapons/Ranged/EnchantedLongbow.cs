@@ -24,7 +24,7 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.useTime = 35;
 			item.useAnimation = 35;
 			item.knockBack = 2;
-			item.value = 2000;
+			item.value = Item.sellPrice(silver: 75);
 			item.rare = ItemRarityID.Green;
 			item.shoot = ProjectileID.UnholyArrow;
 			item.noMelee = true;
@@ -40,6 +40,7 @@ namespace Illuminum.Items.Weapons.Ranged
 			if (type == ProjectileID.WoodenArrowFriendly) // or ProjectileID.WoodenArrowFriendly
 			{
 				type = ProjectileID.JestersArrow; // or ProjectileID.FireArrow;
+				item.shootSpeed = 3f;
 			}
 		return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal
 		}

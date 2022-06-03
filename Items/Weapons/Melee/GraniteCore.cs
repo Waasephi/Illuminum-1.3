@@ -27,7 +27,7 @@ namespace Illuminum.Items.Weapons.Melee
 			item.useTime = 25;
 			item.shootSpeed = 13f;
 			item.knockBack = 2.5f;
-			item.damage = 13;
+			item.damage = 20;
 			item.rare = ItemRarityID.Blue;
 
 			item.melee = true;
@@ -36,7 +36,7 @@ namespace Illuminum.Items.Weapons.Melee
 			item.noUseGraphic = true;
 
 			item.UseSound = SoundID.Item1;
-			item.value = Item.sellPrice(gold: 1);
+			item.value = Item.sellPrice(silver: 65);
 			item.shoot = ModContent.ProjectileType<GraniteCoreProjectile>();
 		}
 	}

@@ -16,7 +16,7 @@ namespace Illuminum.Items.Accessories
 		{
 			item.width = 26;
 			item.height = 28;
-			item.value = 10000;
+			item.value = Item.sellPrice(gold: 2);
 			item.rare = ItemRarityID.Blue;
 			item.accessory = true;
 			item.expert = true;

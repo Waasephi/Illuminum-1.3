@@ -10,7 +10,7 @@ namespace Illuminum.Items.Banners
         public override void SetDefaults()
         {
             item.width = 12;
-            item.height = 28;
+            item.height = 34;
             item.maxStack = 99;
             item.useTurn = true;
             item.autoReuse = true;

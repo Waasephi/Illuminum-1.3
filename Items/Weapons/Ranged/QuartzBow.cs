@@ -1,4 +1,5 @@
 using Illuminum.Items.Materials;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -21,7 +22,7 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.useAnimation = 30;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
-			item.value = 2000;
+			item.value = Item.sellPrice(silver: 25);
 			item.rare = ItemRarityID.White;
 			item.shoot = ProjectileID.UnholyArrow;
 			item.noMelee = true;

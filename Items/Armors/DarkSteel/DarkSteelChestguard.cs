@@ -17,7 +17,7 @@ namespace Illuminum.Items.Armors.DarkSteel
 
 		public override void SetDefaults()
 		{
-			item.width = 36;
+			item.width = 28;
 			item.height = 22;
 			item.value = 2000;
 			item.rare = ItemRarityID.Green;

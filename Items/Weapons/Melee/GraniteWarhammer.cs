@@ -20,8 +20,8 @@ namespace Illuminum.Items.Weapons.Melee
 			item.melee = true;
 			item.width = 58;
 			item.height = 60;
-			item.useTime = 56;
-			item.useAnimation = 56;
+			item.useTime = 38;
+			item.useAnimation = 38;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 10;
 			item.value = Item.sellPrice(silver: 54);

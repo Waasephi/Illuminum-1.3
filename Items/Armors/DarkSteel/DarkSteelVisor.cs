@@ -17,7 +17,7 @@ namespace Illuminum.Items.Armors.DarkSteel
 
 		public override void SetDefaults()
 		{
-			item.width = 20;
+			item.width = 16;
 			item.height = 8;
 			item.value = 1000;
 			item.rare = ItemRarityID.Green;
@@ -40,7 +40,9 @@ namespace Illuminum.Items.Armors.DarkSteel
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Cannot be set on fire, Immune to Cursed Inferno.";
+			IlluminumPlayer modPlayer = player.GetModPlayer<IlluminumPlayer>();
+			player.setBonus = "Cannot be set on fire, Immune to Cursed Inferno, All weapons inflict Cursed Inferno";
+			modPlayer.darkSteelSet = true;
 			player.buffImmune[39] = true;
 			player.fireWalk = true;
 		}

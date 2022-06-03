@@ -21,16 +21,16 @@ namespace Illuminum.Tiles.Decor
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Angelite Totem");
 			AddMapEntry(new Color(238, 90, 167), name);
-
+			Main.tileLighted[Type] = true;
 			//Can't use this since texture is vertical.
 			//animationFrameHeight = 56;
 		}
 
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
 		{
-			r = 2f;
-			g = 1.5f;
-			b = 1.5f;
+			r = 0.1f;
+			g = 0.1f;
+			b = 0.1f;
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)

@@ -26,7 +26,7 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 4;
-			item.value = Item.sellPrice(silver: 10);
+			item.value = Item.sellPrice(silver: 30);
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item41;
 			item.autoReuse = false;
@@ -38,7 +38,7 @@ namespace Illuminum.Items.Weapons.Ranged
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			// Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileID.VilethornBase, damage / 3, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX * 1.5f, speedY * 1.5f, ProjectileID.VilethornBase, damage / 3, knockBack, player.whoAmI);
 			// By returning true, the vanilla behavior will take place, which will shoot the 1st projectile, the one determined by the ammo.
 			return true;
 		}

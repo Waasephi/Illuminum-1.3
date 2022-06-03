@@ -15,8 +15,7 @@ namespace Illuminum.Items.Accessories
 
 		public override void UpdateAccessory(Player player, bool hideVisual) //Where it says "p" is the variable used to represent "player". In this case, every p stands for player. This is called when the accessory is on.
 		{
-			player.moveSpeed *= 1.5f;
-			player.maxRunSpeed += 2.5f;
+			player.maxMinions += 2;
 		}
 
 		public override void SetDefaults()

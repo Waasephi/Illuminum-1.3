@@ -22,7 +22,7 @@ namespace Illuminum.Items.Weapons.Magic
 			item.useAnimation = 30;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
-			item.value = 100;
+			item.value = Item.sellPrice(silver: 90);
 			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = false;

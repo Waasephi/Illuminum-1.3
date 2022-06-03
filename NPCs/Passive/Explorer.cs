@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Illuminum.Items.Materials;
 using Illuminum.Items.Accessories;
+using Illuminum.Items.Placeables;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -47,14 +48,14 @@ namespace Illuminum.NPCs.Passive
 			animationType = NPCID.Merchant;
 		}
 
-		/*public override bool CanTownNPCSpawn(int numTownNPCs, int money) //Whether or not the conditions have been met for this town NPC to be able to move into town.
+		public override bool CanTownNPCSpawn(int numTownNPCs, int money) //Whether or not the conditions have been met for this town NPC to be able to move into town.
 		{
-			if (NPC.downedBoss1)  //so after the EoC is killed
+			if (NPC.downedSlimeKing)  //so after the EoC is killed
 			{
 				return true;
 			}
 			return false;
-		} */
+		}
 
 		public override bool CheckConditions(int left, int right, int top, int bottom)    //Allows you to define special conditions required for this town NPC's house
 		{
@@ -105,11 +106,8 @@ namespace Illuminum.NPCs.Passive
 		{
 			shop.item[nextSlot].SetDefaults(ModContent.ItemType<AdventurersLocket>());  //this is an example of how to add a modded item
 			nextSlot++;
-			if (NPC.downedSlimeKing)
-			{
-				shop.item[nextSlot].SetDefaults(ModContent.ItemType<CrystalTear>());
-				nextSlot++;
-			}
+			shop.item[nextSlot].SetDefaults(ModContent.ItemType<CrystalTear>());
+			nextSlot++;
 			if (NPC.downedBoss1)
 			{
 				shop.item[nextSlot].SetDefaults(ModContent.ItemType<BloodyLens>());
@@ -135,7 +133,7 @@ namespace Illuminum.NPCs.Passive
 				shop.item[nextSlot].SetDefaults(ModContent.ItemType<SkullNecklace>());
 				nextSlot++;
 			}
-			if (Main.hardMode)   //this make so when Moon Lord is killed the town npc will sell this
+			if (Main.hardMode)
 			{
 				shop.item[nextSlot].SetDefaults(490);
 				nextSlot++;
@@ -164,6 +162,8 @@ namespace Illuminum.NPCs.Passive
 			if (NPC.downedPlantBoss)
 			{
 				shop.item[nextSlot].SetDefaults(ModContent.ItemType<HeartofGaia>());
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModContent.ItemType<VoidStone>());
 				nextSlot++;
 			}
 			if (NPC.downedGolemBoss)

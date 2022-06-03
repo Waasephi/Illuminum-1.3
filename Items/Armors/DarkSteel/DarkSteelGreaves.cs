@@ -17,8 +17,8 @@ namespace Illuminum.Items.Armors.DarkSteel
 
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 18;
+			item.width = 26;
+			item.height = 16;
 			item.value = Item.sellPrice(silver: 15);
 			item.rare = ItemRarityID.Green;
 			item.defense = 7;

@@ -17,8 +17,8 @@ namespace Illuminum.Items.Armors.Hematite
 
 		public override void SetDefaults()
 		{
-			item.width = 14;
-			item.height = 18;
+			item.width = 18;
+			item.height = 20;
 			item.value = 1000;
 			item.rare = ItemRarityID.Green;
 			item.defense = 7;
@@ -40,7 +40,7 @@ namespace Illuminum.Items.Armors.Hematite
 
 		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
 		{
-			drawHair = true;
+			drawHair = false;
 		}
 
 		public override void UpdateArmorSet(Player player)

@@ -10,19 +10,20 @@ namespace Illuminum.Items.Accessories
 		{
 			DisplayName.SetDefault("Honey Heart");
 			Tooltip.SetDefault("Tempting to eat... except it isn't edible" +
-                "\nPermanent Honey Buff.");
+                "\n+20 Max Life, Permanent Honey Buff.");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) //Where it says "p" is the variable used to represent "player". In this case, every p stands for player. This is called when the accessory is on.
 		{
 			player.AddBuff(BuffID.Honey, 2);
+			player.statLifeMax2 += 20;
 		}
 
 		public override void SetDefaults()
 		{
 			item.width = 22;
-			item.height = 30;
-			item.value = 10000;
+			item.height = 20;
+			item.value = Item.sellPrice(silver: 30);
 			item.rare = ItemRarityID.Blue;
 			item.accessory = true;
 			item.expert = false;

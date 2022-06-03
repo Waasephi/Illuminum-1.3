@@ -1,4 +1,5 @@
 using Illuminum.Tiles;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -16,7 +17,7 @@ namespace Illuminum.Items.Materials
 		{
 			item.width = 10;
 			item.height = 18;
-			item.value = 100;
+			item.value = Item.sellPrice(silver: 1);
 			item.rare = ItemRarityID.White;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.useTurn = true;

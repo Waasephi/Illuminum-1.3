@@ -32,7 +32,7 @@ namespace Illuminum.NPCs.Passive
 			animationType = NPCID.Frog;
 			npc.knockBackResist = 0f;
 			banner = npc.type;
-			npc.friendly = true;
+			npc.friendly = false;
 			bannerItem = ModContent.ItemType<MosscreepBanner>();
 		}
 

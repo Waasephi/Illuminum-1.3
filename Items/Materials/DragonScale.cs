@@ -1,4 +1,5 @@
 using Illuminum.Items.Pets;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -17,7 +18,7 @@ namespace Illuminum.Items.Materials
 		{
 			item.width = 18;
 			item.height = 24;
-			item.value = 100;
+			item.value = Item.sellPrice(silver: 27);
 			item.rare = ItemRarityID.LightRed;
 			item.maxStack = 999;
 		}

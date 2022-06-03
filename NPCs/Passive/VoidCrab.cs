@@ -19,11 +19,11 @@ namespace Illuminum.NPCs.Passive
 
 		public override void SetDefaults()
 		{
-			npc.width = 38;
-			npc.height = 28;
+			npc.width = 42;
+			npc.height = 34;
 			npc.damage = 0;
-			npc.lifeMax = 5;
-			npc.life = 5;
+			npc.lifeMax = 1000;
+			npc.life = 1000;
 			npc.defense = 20;
 			npc.HitSound = SoundID.NPCHit13;
 			npc.DeathSound = SoundID.NPCDeath11;
@@ -32,7 +32,7 @@ namespace Illuminum.NPCs.Passive
 			animationType = NPCID.Crab;
 			npc.knockBackResist = 0f;
 			banner = npc.type;
-			npc.friendly = true;
+			npc.friendly = false;
 			bannerItem = ModContent.ItemType<VoidCrabBanner>();
 		}
 

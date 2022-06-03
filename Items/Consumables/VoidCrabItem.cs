@@ -19,8 +19,8 @@ namespace Illuminum.Items.Consumables
 		{
 			item.maxStack = 999;
 			item.consumable = true;
-			item.width = 38;
-			item.height = 22;
+			item.width = 42;
+			item.height = 30;
 			item.rare = -1;
 			item.expert = false;
 		}

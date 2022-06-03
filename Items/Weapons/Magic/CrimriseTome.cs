@@ -29,7 +29,7 @@ namespace Illuminum.Items.Weapons.Magic
 			item.noMelee = true;
 			item.autoReuse = true;
 			item.knockBack = 3;
-			item.value = Item.sellPrice(0, 0, 12, 0);
+			item.value = Item.sellPrice(0, 0, 42, 0);
 			item.shoot = ProjectileType<CrimriseBolt>();
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item43;

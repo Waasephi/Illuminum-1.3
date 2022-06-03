@@ -18,7 +18,7 @@ namespace Illuminum.Items.Weapons.Melee
 
 		public override void SetDefaults() 
 		{
-			item.damage = 53;
+			item.damage = 66;
 			item.melee = true;
 			item.width = 46;
 			item.height = 48;
@@ -31,7 +31,7 @@ namespace Illuminum.Items.Weapons.Melee
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = ModContent.ProjectileType<BrimstoneWave>();
-			item.shootSpeed = 16f;
+			item.shootSpeed = 25f;
 			item.scale *= 1.2f;
 		}
 

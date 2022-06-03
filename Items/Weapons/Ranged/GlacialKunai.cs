@@ -26,7 +26,7 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.useAnimation = 17;   //this is how fast the animation when the item is used
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 1;
-			item.value = 100;
+			item.value = Item.sellPrice(silver: 1);
 			item.rare = ItemRarityID.Blue;
 			item.reuseDelay = 6;    //this is the item delay
 			item.UseSound = SoundID.Item1;

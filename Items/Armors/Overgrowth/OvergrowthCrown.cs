@@ -12,15 +12,15 @@ namespace Illuminum.Items.Armors.Overgrowth
 		{
 			base.SetStaticDefaults();
 			DisplayName.SetDefault("Overgrowth Crown");
-			Tooltip.SetDefault("+5% Summoner Damage" +
-                "\n+20 Mana" +
+			Tooltip.SetDefault("+7% Summoner Damage" +
+                "\n+40 Mana" +
                 "\n+1 Max Minion");
 		}
 
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 14;
+			item.width = 20;
+			item.height = 10;
 			item.value = 750;
 			item.rare = ItemRarityID.Blue;
 			item.defense = 3;
@@ -37,13 +37,14 @@ namespace Illuminum.Items.Armors.Overgrowth
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == ModContent.ItemType<OvergrowthCloak>();
+			return body.type == ItemID.JungleShirt && legs.type == ItemID.JunglePants;
 		}
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "+10% Summon Damage.";
+			player.setBonus = "+10% Summon Damage, +1 Minion Slot.";
 			player.minionDamage *= 1.1f;
+			player.maxMinions += 1;
 		}
 
 		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)

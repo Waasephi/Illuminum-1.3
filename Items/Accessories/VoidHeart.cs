@@ -9,26 +9,29 @@ namespace Illuminum.Items.Accessories
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Void Heart");
-			Tooltip.SetDefault("It is increadibly painful to hold." +
-                "\nEmpowers your body, at a cost.");
+			Tooltip.SetDefault("It is incredibly painful to hold." +
+                "\nIncreases your damage by 50% and increases your Life Regeneration by 4." +
+                "\nYou lose 200 max life, Cannot use Lifeforce Potions.");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) //Where it says "p" is the variable used to represent "player". In this case, every p stands for player. This is called when the accessory is on.
 		{
-			player.statLifeMax2 -= 150;
-			if(player.statLifeMax2 <= 150)
+			player.statLifeMax2 -= 200;
+			if(player.statLifeMax2 <= 200)
             {
 				player.statLifeMax2 = 1;
-				player.buffImmune[BuffID.Lifeforce] = true;
+				
 			}
 			player.allDamage *= 1.5f;
+			player.lifeRegen += 4;
+			player.buffImmune[BuffID.Lifeforce] = true;
 		}
 
 		public override void SetDefaults()
 		{
 			item.width = 34;
 			item.height = 32;
-			item.value = 10000;
+			item.value = Item.sellPrice(gold: 10);
 			item.rare = ItemRarityID.Cyan;
 			item.accessory = true;
 			item.expert = false;
@@ -39,7 +42,7 @@ namespace Illuminum.Items.Accessories
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod, "HoneyHeart");
 			recipe.AddIngredient(mod, "HeartofGaia");
-			recipe.AddIngredient(mod, "AbyssalFlesh", 100);
+			recipe.AddIngredient(mod, "AbyssalFlesh", 40);
 			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

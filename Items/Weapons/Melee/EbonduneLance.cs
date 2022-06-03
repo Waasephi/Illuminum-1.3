@@ -22,13 +22,13 @@ namespace Illuminum.Items.Weapons.Melee
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 32;
 			item.useTime = 60;
-			item.shootSpeed = 2.2f;
+			item.shootSpeed = 2.5f;
 			item.knockBack = 6.5f;
-			item.width = 40;
-			item.height = 40;
-			item.scale = 1f;
+			item.width = 66;
+			item.height = 66;
+			item.scale = 0.9f;
 			item.rare = ItemRarityID.Blue;
-			item.value = Item.sellPrice(silver: 10);
+			item.value = Item.sellPrice(silver: 30);
 
 			item.melee = true;
 			item.noMelee = true; // Important because the spear is actually a projectile instead of an item. This prevents the melee hitbox of this item.
@@ -49,7 +49,7 @@ namespace Illuminum.Items.Weapons.Melee
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			// Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
-			Projectile.NewProjectile(position.X, position.Y, speedX * 8, speedY * 8, ProjectileID.VilethornBase, damage, knockBack = 2, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX * 10, speedY * 10, ProjectileID.VilethornBase, damage, knockBack = 2, player.whoAmI);
 			// By returning true, the vanilla behavior will take place, which will shoot the 1st projectile, the one determined by the ammo.
 			return true;
 		}

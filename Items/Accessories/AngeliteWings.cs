@@ -10,14 +10,14 @@ namespace Illuminum.Items.Accessories
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("(200 wing time, 3 accel");
+			Tooltip.SetDefault("(200 wing time, 3 accel)");
 		}
 
 		public override void SetDefaults()
 		{
 			item.width = 56;
 			item.height = 38;
-			item.value = 10000;
+			item.value = Item.sellPrice(gold: 3);
 			item.rare = ItemRarityID.Blue;
 			item.accessory = true;
 		}
@@ -31,10 +31,10 @@ namespace Illuminum.Items.Accessories
 			ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
 		{
 			ascentWhenFalling = 0.85f;
-			ascentWhenRising = 0.08f;
-			maxCanAscendMultiplier = 0.8f;
-			maxAscentMultiplier = 1f;
-			constantAscend = 0.135f;
+			ascentWhenRising = 0.5f;
+			maxCanAscendMultiplier = 1.5f;
+			maxAscentMultiplier = 1.5f;
+			constantAscend = 1.5f;
 		}
 
 		public override void HorizontalWingSpeeds(Player player, ref float speed, ref float acceleration)

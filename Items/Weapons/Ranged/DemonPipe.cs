@@ -23,7 +23,7 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.useAnimation = 27;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.knockBack = 6;
-			item.value = Item.sellPrice(silver: 13);
+			item.value = Item.sellPrice(silver: 25);
 			item.rare = ItemRarityID.Blue;
 			item.shoot = ProjectileID.UnholyArrow;
 			item.noMelee = true;

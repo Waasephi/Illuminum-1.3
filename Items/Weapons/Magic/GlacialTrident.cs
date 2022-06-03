@@ -24,7 +24,7 @@ namespace Illuminum.Items.Weapons.Magic
 			item.useAnimation = 25;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.knockBack = 2;
-			item.value = 100;
+			item.value = Item.sellPrice(silver: 60);
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item43;
 			item.autoReuse = true;
@@ -32,15 +32,6 @@ namespace Illuminum.Items.Weapons.Magic
 			item.shootSpeed = 12f;
 			item.mana = 8;
 			item.noMelee = true;
-		}
-
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			// Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
-			Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(25));
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileID.SkyFracture, damage, knockBack, player.whoAmI);
-
-			return true;
 		}
 
 		public override void AddRecipes()

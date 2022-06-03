@@ -1,5 +1,6 @@
-using Illuminum.Projectiles;
 using Terraria.ID;
+using Terraria;
+using Illuminum.Projectiles;
 using Terraria.ModLoader;
 
 namespace Illuminum.Items.Weapons.Ranged
@@ -23,7 +24,7 @@ namespace Illuminum.Items.Weapons.Ranged
 			item.useAnimation = 32;   //this is how fast the animation when the item is used
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 5;
-			item.value = 100;
+			item.value = Item.sellPrice(gold: 5);
 			item.rare = ItemRarityID.Green;
 			item.reuseDelay = 6;    //this is the item delay
 			item.UseSound = SoundID.Item1;

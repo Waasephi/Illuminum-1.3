@@ -24,7 +24,7 @@ namespace Illuminum.Projectiles
 			projectile.timeLeft = 200;
 			projectile.height = 18;
 			projectile.width = 25;
-			projectile.penetrate = 3;
+			projectile.penetrate = 1;
 			aiType = ProjectileID.Bullet;
 			projectile.extraUpdates = 1;
 		}

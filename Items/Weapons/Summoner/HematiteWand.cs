@@ -12,7 +12,7 @@ namespace Illuminum.Items.Weapons.Summoner
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Hematite Wand");
-            Tooltip.SetDefault("Summons a Hematite Sticker to fight for you.");
+            Tooltip.SetDefault("Summons a Hematite Reaver to fight for you.");
             ItemID.Sets.GamepadWholeScreenUseRange[item.type] = true;
             ItemID.Sets.LockOnIgnoresCollision[item.type] = true;
         }
@@ -22,8 +22,8 @@ namespace Illuminum.Items.Weapons.Summoner
             item.damage = 34;
             item.summon = true;
             item.mana = 10;
-            item.width = 40;
-            item.height = 40;
+            item.width = 48;
+            item.height = 46;
             item.useTime = 36;
             item.useAnimation = 36;
             item.useStyle = ItemUseStyleID.SwingThrow;
@@ -32,8 +32,8 @@ namespace Illuminum.Items.Weapons.Summoner
             item.value = Item.buyPrice(0, 3, 0, 0);
             item.rare = ItemRarityID.Cyan;
             item.UseSound = SoundID.Item44;
-            item.shoot = ProjectileType<HematiteSticker>();
-            item.buffType = BuffType<Buffs.HematiteStickerBuff>(); //The buff added to player after used the item
+            item.shoot = ProjectileType<HematiteReaver>();
+            item.buffType = BuffType<Buffs.HematiteReaverBuff>(); //The buff added to player after used the item
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

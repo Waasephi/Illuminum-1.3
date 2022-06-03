@@ -17,19 +17,19 @@ namespace Illuminum.Items.Weapons.Ranged
 
 		public override void SetDefaults() 
 		{
-			item.damage = 40;
+			item.damage = 50;
 			item.ranged = true;
 			item.width = 38;
 			item.height = 68;
-			item.useTime = 35;
-			item.useAnimation = 35;
+			item.useTime = 26;
+			item.useAnimation = 26;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 2;
-			item.value = 2000;
+			item.value = Item.sellPrice(gold: 1, silver: 50);
 			item.rare = ItemRarityID.Blue;
 			item.shoot = ProjectileID.UnholyArrow;
 			item.noMelee = true;
-			item.shootSpeed = 8f;
+			item.shootSpeed = 12f;
 			item.UseSound = SoundID.Item5;
 			item.autoReuse = false;
 			item.useStyle = ItemUseStyleID.HoldingOut;

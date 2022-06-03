@@ -17,8 +17,8 @@ namespace Illuminum.Items.Armors.Ebondune
 
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 20;
+			item.width = 16;
+			item.height = 18;
 			item.value = 1000;
 			item.rare = ItemRarityID.Blue;
 			item.defense = 4;
@@ -42,6 +42,11 @@ namespace Illuminum.Items.Armors.Ebondune
 		{
 			player.setBonus = "+8% Melee Crit";
 			player.meleeCrit += 8;
+		}
+
+		public override bool DrawHead()
+		{
+			return false;
 		}
 
 		public override void AddRecipes()

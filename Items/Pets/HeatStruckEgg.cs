@@ -22,6 +22,7 @@ namespace Illuminum.Items.Pets
 
         public override void SetDefaults()
         {
+            item.value = Item.sellPrice(silver: 50);
             item.CloneDefaults(ItemID.Carrot);
             item.shoot = mod.ProjectileType("MegaDragon");
             item.buffType = mod.BuffType("MegaDragon");

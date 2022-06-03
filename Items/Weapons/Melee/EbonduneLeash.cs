@@ -17,9 +17,9 @@ namespace Illuminum.Items.Weapons.Melee
         public override void SetDefaults()
         {
             item.damage = 22;
-            item.width = 28;
-            item.height = 46;
-            item.value = Item.sellPrice(0, 1);
+            item.width = 58;
+            item.height = 40;
+            item.value = Item.sellPrice(silver: 50);
             item.rare = ItemRarityID.Blue;
             item.noMelee = true;
             item.useStyle = ItemUseStyleID.HoldingOut;
